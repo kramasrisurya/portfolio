@@ -16,17 +16,27 @@ HTML5: Semantic structure for web pages.
 
 CSS3: Custom styling with Flexbox, Grid, and Keyframe animations.
 
-JavaScript: (If applicable for future interactivity).
 
 Project Structure:
+
+Portfolo/
+├── index.html         
+├── index.css          
+├── about.html         
+├── about.css        
+├── projects.html      
+├── projects.css       
+├── resume.html  
+├── resume.css       
+├── contact.html       
+├── contact.css     
+├── image1.png       
+└── Readme.md       
+
 index.html / index.css: Landing page featuring a hero section and profile introduction.
-
 about.html / about.css: Detailed background on my academic journey and vision.
-
 projects.html / projects.css: Showcase of my work, including FinTech models and AI agents.
-
 resume.html / resume.css: Digital version of my professional resume.
-
 contact.html / contact.css: Communication hub with a contact form and social links.
 
 About Me:
