@@ -35,6 +35,6 @@ I am a B.Tech Computer Science and Engineering student at Amrita Vishwa Vidyapee
 Connect with Me:
 Email: kramasrisurya@gmail.com
 
-LinkedIn: www.linkdin.com/ramasrisurya/
+LinkedIn: www.linkdin.com/in/rama-sri-surya/
 
 GitHub: kramasrisurya
