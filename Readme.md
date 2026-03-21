@@ -33,7 +33,8 @@ About Me:
 I am a B.Tech Computer Science and Engineering student at Amrita Vishwa Vidyapeetham, Kollam. I am passionate about Artificial Intelligence and have completed AIML Expert Specialization Training. My goal is to become a skilled Machine Learning Engineer and build intelligent systems that impact the real world.
 
 Connect with Me:
-Email: kramasrisurya@gmail.com
+
+[Email](kramasrisurya@gmail.com)
 
 [LinkedIn](https://www.linkedin.com/in/rama-sri-surya/)
 
