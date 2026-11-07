@@ -9,7 +9,7 @@ import { SarthakAbout } from './components/SarthakAbout';
 import { SarthakSelectedWork } from './components/SarthakSelectedWork';
 import { SarthakExpertise } from './components/SarthakExpertise';
 import { SarthakHackathons } from './components/SarthakHackathons';
-// import { SarthakTerminal } from './components/SarthakTerminal';
+import { SarthakTerminal } from './components/SarthakTerminal';
 import { SarthakJourney } from './components/SarthakJourney';
 import { SarthakContact } from './components/SarthakContact';
 import { ResumeModal } from './components/ResumeModal';
@@ -44,7 +44,7 @@ export const App: React.FC = () => {
         <SarthakSelectedWork />
         <SarthakExpertise />
         <SarthakHackathons />
-        {/* <SarthakTerminal /> */}
+        <SarthakTerminal />
         <SarthakJourney />
         <SarthakContact onOpenResume={() => setIsResumeOpen(true)} />
       </main>
