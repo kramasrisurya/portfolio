@@ -33,7 +33,7 @@ export const SarthakTerminal: React.FC = () => {
       isInitialMount.current = false;
       return;
     }
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // no auto-scroll on mount
   }, [history]);
 
   const handleCommand = (cmdText: string) => {

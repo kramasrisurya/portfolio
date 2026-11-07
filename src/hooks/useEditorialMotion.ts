@@ -44,6 +44,7 @@ export const useEditorialMotion = () => {
         });
 
         lenis.on('scroll', ScrollTrigger.update);
+        lenis.scrollTo(0, { immediate: true });
 
         currentRafHandler = (time: number) => {
           lenis?.raf(time * 1000);
