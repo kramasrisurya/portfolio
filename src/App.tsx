@@ -16,12 +16,31 @@ import { ResumeModal } from './components/ResumeModal';
 
 export const App: React.FC = () => {
   React.useEffect(() => {
+    // Aggressively pin initial viewport to absolute origin (0, 0)
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
-    const timer = setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
-    }, 100);
-    return () => clearTimeout(timer);
+    let frame = 0;
+    const pinToTop = () => {
+      if (window.scrollY > 0 && frame < 30) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+      }
+      frame++;
+      if (frame < 60) {
+        requestAnimationFrame(pinToTop);
+      }
+    };
+    requestAnimationFrame(pinToTop);
+
+    const interval = setInterval(() => {
+      if (frame >= 60) {
+        clearInterval(interval);
+      } else if (window.scrollY > 0) {
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+      }
+    }, 25);
+
+    return () => clearInterval(interval);
   }, []);
+
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   useEditorialMotion();
 
