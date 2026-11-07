@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import Lenis from 'lenis';
 
 export const useEditorialMotion = () => {
@@ -14,7 +14,7 @@ export const useEditorialMotion = () => {
         motionPref === 'off' || prefersReduced.matches ? 'off' : 'on';
     }
 
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger); return;
 
     let lenis: any = null;
     let ctx: gsap.Context | null = null;
