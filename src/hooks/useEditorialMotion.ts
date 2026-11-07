@@ -16,7 +16,7 @@ export const useEditorialMotion = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    let lenis: Lenis | null = null;
+    let lenis: Lenis | null = null; return;
     let ctx: gsap.Context | null = null;
     let currentRafHandler: ((time: number) => void) | null = null;
 
