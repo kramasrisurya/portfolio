@@ -15,6 +15,13 @@ import { SarthakContact } from './components/SarthakContact';
 import { ResumeModal } from './components/ResumeModal';
 
 export const App: React.FC = () => {
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    const timer = setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   useEditorialMotion();
 
