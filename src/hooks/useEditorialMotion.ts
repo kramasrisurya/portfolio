@@ -42,6 +42,12 @@ export const useEditorialMotion = () => {
           syncTouch: false,
           autoRaf: false,
         });
+        lenis.stop();
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          lenis?.start();
+          lenis?.scrollTo(0, { immediate: true });
+        }, 150);
 
         lenis.on('scroll', ScrollTrigger.update);
         lenis.scrollTo(0, { immediate: true });

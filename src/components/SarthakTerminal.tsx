@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Terminal, CornerDownLeft, Play, RefreshCw } from 'lucide-react';
 import { PROFILE, HACKATHONS, FEATURED_PROJECTS } from '../data/portfolioData';
 
@@ -26,15 +26,6 @@ export const SarthakTerminal: React.FC = () => {
   ]);
 
   const terminalEndRef = useRef<HTMLDivElement | null>(null);
-  const isInitialMount = useRef<boolean>(true);
-
-  useEffect(() => {
-    if (isInitialMount.current) {
-      isInitialMount.current = false;
-      return;
-    }
-    // no auto-scroll on mount
-  }, [history]);
 
   const handleCommand = (cmdText: string) => {
     const raw = cmdText.trim();
