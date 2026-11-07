@@ -47,7 +47,8 @@ export const SarthakSignalVisualizer: React.FC<SarthakSignalVisualizerProps> = (
       renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: true,
-        powerPreference: 'high-performance',
+        powerPreference: 'default',
+        failIfMajorPerformanceCaveat: false,
       });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
@@ -159,11 +160,11 @@ export const SarthakSignalVisualizer: React.FC<SarthakSignalVisualizerProps> = (
 
       const updateSize = () => {
         if (!container || !renderer || !camera) return;
-        const w = container.clientWidth || 380;
-        const h = container.clientHeight || 300;
+        const w = Math.max(container.clientWidth || 0, 320);
+        const h = Math.max(container.clientHeight || 0, 260);
         camera.aspect = w / h;
         camera.updateProjectionMatrix();
-        renderer.setSize(w, h);
+        renderer.setSize(w, h, false);
       };
 
       const resizeObserver = new ResizeObserver(updateSize);
@@ -240,7 +241,57 @@ export const SarthakSignalVisualizer: React.FC<SarthakSignalVisualizerProps> = (
         }
       };
     } catch (err) {
-      console.error('Three.js Particle scene fallback:', err);
+      console.warn('Three.js WebGL unavailable, falling back to 2D particle canvas:', err);
+      try {
+        const fallbackCanvas = document.createElement('canvas');
+        fallbackCanvas.style.position = 'absolute';
+        fallbackCanvas.style.inset = '0';
+        fallbackCanvas.style.width = '100%';
+        fallbackCanvas.style.height = '100%';
+        fallbackCanvas.style.pointerEvents = 'none';
+        canvasMount.innerHTML = '';
+        canvasMount.appendChild(fallbackCanvas);
+
+        const ctx = fallbackCanvas.getContext('2d');
+        if (ctx) {
+          let fAnimId = 0;
+          let fw = (fallbackCanvas.width = (container.clientWidth || 380) * (window.devicePixelRatio || 1));
+          let fh = (fallbackCanvas.height = (container.clientHeight || 300) * (window.devicePixelRatio || 1));
+
+          const renderFallback = (timeMs: number) => {
+            if (!isRunning) return;
+            ctx.clearRect(0, 0, fw, fh);
+            const t = timeMs * 0.002;
+            const rows = 26;
+            const cols = 40;
+            const sp = Math.min(fw, fh) / 34;
+            const cx = fw / 2;
+            const cy = fh / 2;
+
+            for (let r = 0; r < rows; r++) {
+              for (let c = 0; c < cols; c++) {
+                const x = cx + (c - cols / 2) * sp;
+                const y = cy + (r - rows / 2) * sp;
+                const d = Math.hypot(c - cols / 2, r - rows / 2);
+                const wave = Math.sin(d * 0.45 - t) * 8;
+                ctx.beginPath();
+                ctx.arc(x, y + wave, Math.max(1.2, 2.2 + wave * 0.15), 0, Math.PI * 2);
+                ctx.fillStyle = d < 8 ? '#ff8c59' : 'rgba(235, 215, 195, 0.65)';
+                ctx.fill();
+              }
+            }
+            fAnimId = requestAnimationFrame(renderFallback);
+          };
+          fAnimId = requestAnimationFrame(renderFallback);
+
+          return () => {
+            isRunning = false;
+            cancelAnimationFrame(fAnimId);
+          };
+        }
+      } catch (fallbackErr) {
+        console.error('Particle fallback failed:', fallbackErr);
+      }
     }
   }, [impact]);
 
