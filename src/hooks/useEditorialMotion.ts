@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
+// import Lenis from 'lenis';
 
 export const useEditorialMotion = () => {
   useEffect(() => {
@@ -16,7 +16,7 @@ export const useEditorialMotion = () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    let lenis: Lenis | null = null;
+    let lenis: any = null;
     let ctx: gsap.Context | null = null;
     let currentRafHandler: ((time: number) => void) | null = null;
 
@@ -34,33 +34,8 @@ export const useEditorialMotion = () => {
         return;
       }
 
-      // 1. Initialize Lenis Smooth Scroll
-      try {
-        lenis = new Lenis({
-          lerp: 0.12,
-          smoothWheel: true,
-          syncTouch: false,
-          autoRaf: false,
-        });
-        lenis.stop();
-        window.scrollTo(0, 0);
-        setTimeout(() => {
-          lenis?.start();
-          lenis?.scrollTo(0, { immediate: true });
-        }, 150);
-
-        lenis.on('scroll', ScrollTrigger.update);
-        lenis.scrollTo(0, { immediate: true });
-        window.scrollTo(0, 0);
-
-        currentRafHandler = (time: number) => {
-          lenis?.raf(time * 1000);
-        };
-        gsap.ticker.add(currentRafHandler);
-        gsap.ticker.lagSmoothing(0);
-      } catch (err) {
-        console.warn('Lenis smooth scrolling not active:', err);
-      }
+      // Native smooth scroll - zero library interference
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
 
       // 2. Setup GSAP Scoped Animations
       ctx = gsap.context(() => {

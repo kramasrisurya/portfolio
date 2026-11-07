@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Terminal, CornerDownLeft, Play, RefreshCw } from 'lucide-react';
 import { PROFILE, HACKATHONS, FEATURED_PROJECTS } from '../data/portfolioData';
 
@@ -25,7 +25,7 @@ export const SarthakTerminal: React.FC = () => {
     },
   ]);
 
-  const terminalEndRef = useRef<HTMLDivElement | null>(null);
+  // terminal ref
 
   const handleCommand = (cmdText: string) => {
     const raw = cmdText.trim();
@@ -207,7 +207,7 @@ export const SarthakTerminal: React.FC = () => {
                 <div style={{ paddingLeft: '16px', marginTop: '6px' }}>{item.output}</div>
               </div>
             ))}
-            <div ref={terminalEndRef} />
+            
           </div>
 
           <div style={{ marginTop: '20px', paddingTop: '16px', borderTop: '1px solid var(--line)' }}>
