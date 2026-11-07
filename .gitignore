@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# Vite & TypeScript cache
+.vite/
+*.tsbuildinfo
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local scrape, dump & debug scripts
+*.py
+*.cjs
+chunk_*.js
+*.png
+test_*.png
+reference_*.png
+sarthak_portfolio.html
+sarthak_structure.html
+sarthak_styles.css
+sarthak-signal.webp
+RAMA_SRI_SURYA_ATS_RESUME.pdf
+surya_cutout.png
+surya_editorial_test.webp
+resume.html
+.planning/
+
+# Whitelist public assets
+!public/
+!public/**
+!src/**
