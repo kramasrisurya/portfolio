@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Layers, ExternalLink, Globe, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, Layers, ExternalLink, Globe } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import { FEATURED_PROJECTS, ADDITIONAL_PROJECTS } from '../data/portfolioData';
 
@@ -26,11 +26,11 @@ export const SarthakSelectedWork: React.FC = () => {
         <p>
           From high-throughput spatial computer vision to deliberative multi-agent reasoning.
           <br />
-          A complete engineering matrix: 3 flagship S-Tier systems and 7 verified production deployments.
+          A complete engineering matrix: 4 flagship systems and 6 verified production deployments.
         </p>
       </div>
 
-      {/* BLOCK 1: Top 3 S-Tier Flagship Systems (In-Depth) */}
+      {/* BLOCK 1: Top 4 Flagship Systems (In-Depth Big Block) */}
       <div className="work-gallery">
         {FEATURED_PROJECTS.map((project) => {
           const isPipelineOpen = activePipeline === project.id;
@@ -259,48 +259,59 @@ export const SarthakSelectedWork: React.FC = () => {
                       <div
                         style={{
                           marginTop: '12px',
-                          display: 'grid',
-                          gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                          gap: '10px',
+                          padding: '14px',
+                          background: 'rgba(255, 140, 89, 0.04)',
+                          border: '1px solid rgba(255, 140, 89, 0.2)',
+                          borderRadius: '10px',
+                          fontSize: '11px',
+                          fontFamily: 'var(--font-mono)',
                         }}
                       >
-                        {project.architectureFlow.map((flow) => (
-                          <div
-                            key={flow.step}
-                            style={{
-                              background: '#121215',
-                              border: '1px solid rgba(255, 140, 89, 0.3)',
-                              borderRadius: '10px',
-                              padding: '12px',
-                            }}
-                          >
-                            <div style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#ff8c59', fontWeight: 'bold' }}>
-                              STEP {flow.step}
+                        <div style={{ fontWeight: 'bold', color: '#ff8c59', marginBottom: '8px' }}>
+                          VERIFIED SYSTEM ARCHITECTURE SEQUENCE:
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                          {project.architectureFlow.map((flow) => (
+                            <div key={flow.step} style={{ display: 'flex', gap: '8px', alignItems: 'baseline' }}>
+                              <span style={{ color: '#ff8c59', fontWeight: 'bold' }}>[{flow.step}]</span>
+                              <span style={{ color: '#fff', fontWeight: '600' }}>{flow.label}:</span>
+                              <span style={{ color: '#bbb' }}>{flow.detail}</span>
                             </div>
-                            <div style={{ fontSize: '12px', color: '#fff', fontWeight: '600', marginTop: '2px' }}>
-                              {flow.label}
-                            </div>
-                            <div style={{ fontSize: '11px', color: '#888', marginTop: '4px', lineHeight: '1.4' }}>
-                              {flow.detail}
-                            </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
 
-                  {/* DUAL ACTION BUTTONS: Live Vercel Link & Git Repo Link */}
+                  {/* Tech stack pills */}
                   <div
                     style={{
                       display: 'flex',
                       flexWrap: 'wrap',
-                      alignItems: 'center',
-                      gap: '14px',
-                      marginTop: '20px',
-                      paddingTop: '16px',
-                      borderTop: '1px solid var(--line)',
+                      gap: '6px',
+                      marginTop: '16px',
                     }}
                   >
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        style={{
+                          fontSize: '10px',
+                          fontFamily: 'var(--font-mono)',
+                          padding: '2px 8px',
+                          borderRadius: '12px',
+                          background: 'rgba(255, 255, 255, 0.04)',
+                          border: '1px solid var(--line)',
+                          color: '#888',
+                        }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Dual Action Buttons: Live Vercel App + GitHub Repo */}
+                  <div style={{ marginTop: '20px', display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
                     <a
                       href={project.liveUrl}
                       target="_blank"
@@ -309,12 +320,12 @@ export const SarthakSelectedWork: React.FC = () => {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '6px',
-                        padding: '8px 16px',
+                        padding: '8px 18px',
                         borderRadius: '20px',
                         background: '#ff8c59',
                         color: '#030303',
-                        fontWeight: '600',
                         fontSize: '12px',
+                        fontWeight: '600',
                         fontFamily: 'var(--font-mono)',
                         textDecoration: 'none',
                         boxShadow: '0 4px 14px rgba(255, 140, 89, 0.25)',
@@ -355,250 +366,140 @@ export const SarthakSelectedWork: React.FC = () => {
         })}
       </div>
 
-      {/* BLOCK 2: Production Systems Directory (Rank 04 to 10) */}
-      <div
-        className="production-directory"
-        style={{
-          marginTop: '60px',
-          paddingTop: '50px',
-          borderTop: '1px solid var(--line)',
-        }}
-      >
-        <div style={{ marginBottom: '32px' }}>
-          <span className="eyebrow" style={{ color: '#ff8c59' }}>
-            02.B / PRODUCTION SYSTEMS DIRECTORY
-          </span>
-          <h3
+      {/* BLOCK 2: Minimal "Work More" list for projects 05 to 10 */}
+      <div className="work-more" style={{ marginTop: '70px', paddingTop: '32px', borderTop: '1px solid var(--line)' }}>
+        <span className="eyebrow" style={{ color: '#ff8c59', marginBottom: '24px', display: 'block' }}>
+          02.B / ADDITIONAL PRODUCTION SYSTEMS
+        </span>
+
+        {ADDITIONAL_PROJECTS.map((proj) => (
+          <div
+            key={proj.id}
             style={{
-              fontSize: 'clamp(24px, 3.5vw, 36px)',
-              fontWeight: '500',
-              color: '#fff',
-              margin: '8px 0 12px',
-              letterSpacing: '-0.5px',
+              borderBottom: '1px solid var(--line)',
+              padding: '22px 0',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '16px',
             }}
           >
-            Ranked Production Deployments &amp; Utilities
-          </h3>
-          <p style={{ color: '#888', fontSize: '13px', maxWidth: '680px', lineHeight: '1.6' }}>
-            Beyond the three core S-Tier reasoning graphs, here are 7 verified production deployments spanning NASA telemetry, biometric edge vision, industrial robotics, and cloud utilities.
-          </p>
-        </div>
-
-        {/* Directory Matrix Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '16px',
-          }}
-        >
-          {ADDITIONAL_PROJECTS.map((proj) => {
-            const cleanHost = proj.liveUrl.replace(/^https?:\/\//, '');
-
-            return (
-              <div
-                key={proj.id}
+            <div>
+              <small
                 style={{
-                  background: 'linear-gradient(135deg, rgba(20, 20, 24, 0.7), rgba(10, 10, 12, 0.9))',
-                  border: '1px solid var(--line)',
-                  borderRadius: '14px',
-                  padding: '20px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  transition: 'border-color 0.2s, transform 0.2s',
+                  font: '9px/1.6 var(--font-mono)',
+                  color: '#b6a998',
+                  marginBottom: '6px',
+                  display: 'block',
+                  letterSpacing: '0.5px',
+                  textTransform: 'uppercase',
                 }}
               >
-                <div>
-                  {/* Top Bar: Rank + Tier + Status */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      marginBottom: '12px',
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span
-                        style={{
-                          fontSize: '11px',
-                          fontFamily: 'var(--font-mono)',
-                          color: '#ff8c59',
-                          fontWeight: 'bold',
-                        }}
-                      >
-                        RANK {proj.rank}
-                      </span>
-                      <span
-                        style={{
-                          fontSize: '10px',
-                          fontFamily: 'var(--font-mono)',
-                          padding: '2px 8px',
-                          borderRadius: '6px',
-                          background: 'rgba(255, 255, 255, 0.05)',
-                          color: '#ddd',
-                          border: '1px solid rgba(255, 255, 255, 0.08)',
-                        }}
-                      >
-                        {proj.tier}
-                      </span>
-                    </div>
-
-                    <span
-                      style={{
-                        fontSize: '9px',
-                        fontFamily: 'var(--font-mono)',
-                        color: proj.status.includes('100%') ? '#10b981' : '#ffbd2e',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '4px',
-                      }}
-                    >
-                      <CheckCircle2 className="w-2.5 h-2.5" />
-                      {proj.status}
-                    </span>
-                  </div>
-
-                  {/* Title & Headline */}
-                  <h4
-                    style={{
-                      fontSize: '18px',
-                      fontWeight: '600',
-                      color: '#fff',
-                      margin: '0 0 4px',
-                      letterSpacing: '-0.3px',
-                    }}
-                  >
-                    {proj.title}
-                  </h4>
-                  <div
-                    style={{
-                      fontSize: '12px',
-                      fontFamily: 'var(--font-mono)',
-                      color: '#ff8c59',
-                      marginBottom: '10px',
-                    }}
-                  >
-                    {proj.headline}
-                  </div>
-
-                  <p
-                    style={{
-                      fontSize: '12px',
-                      color: '#aaa',
-                      lineHeight: '1.5',
-                      marginBottom: '14px',
-                    }}
-                  >
-                    {proj.description}
-                  </p>
-
-                  {/* Tech Stack Chips */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                      gap: '5px',
-                      marginBottom: '16px',
-                    }}
-                  >
-                    {proj.techStack.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        style={{
-                          fontSize: '10px',
-                          fontFamily: 'var(--font-mono)',
-                          padding: '2px 7px',
-                          borderRadius: '4px',
-                          background: 'rgba(255, 255, 255, 0.03)',
-                          color: '#888',
-                          border: '1px solid rgba(255, 255, 255, 0.06)',
-                        }}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom Dual Action Links: Vercel Repo + Git Repo */}
-                <div
+                {proj.rank} / {proj.category}
+              </small>
+              <div
+                style={{
+                  font: '400 clamp(22px, 2.6vw, 36px)/1.2 var(--font-display)',
+                  color: '#f1eee8',
+                  display: 'flex',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
+                  gap: '10px',
+                }}
+              >
+                <span>{proj.title}</span>
+                <em
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    paddingTop: '14px',
-                    borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-                    fontSize: '11px',
-                    fontFamily: 'var(--font-mono)',
+                    font: '9px var(--font-mono)',
+                    verticalAlign: 'middle',
+                    color: '#ffac82',
+                    border: '1px solid #8d6747',
+                    borderRadius: '30px',
+                    padding: '3px 9px',
+                    display: 'inline-block',
+                    fontStyle: 'normal',
                   }}
                 >
-                  <a
-                    href={proj.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '5px',
-                      color: '#10b981',
-                      textDecoration: 'none',
-                      fontWeight: '500',
-                    }}
-                    title={`Open Live Vercel: ${cleanHost}`}
-                  >
-                    <Globe className="w-3.5 h-3.5" />
-                    <span>{cleanHost}</span>
-                    <ExternalLink className="w-2.5 h-2.5" />
-                  </a>
-
-                  <a
-                    href={proj.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                      color: '#bbb',
-                      textDecoration: 'none',
-                    }}
-                    title="Open GitHub Repository"
-                  >
-                    <GithubIcon size={14} />
-                    <span>Git Repo</span>
-                    <ArrowUpRight className="w-3 h-3" />
-                  </a>
-                </div>
+                  {proj.tier.split(' ')[0]}
+                </em>
               </div>
-            );
-          })}
-        </div>
+            </div>
 
-        {/* Footer Link to GitHub */}
-        <div style={{ marginTop: '28px', textAlign: 'center' }}>
-          <a
-            className="all-work-link"
-            href="https://github.com/kramasrisurya"
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontSize: '12px',
-              fontFamily: 'var(--font-mono)',
-              color: '#888',
-              padding: '10px 20px',
-              borderRadius: '20px',
-              border: '1px solid var(--line)',
-            }}
-          >
-            <span>Explore all 20+ open-source repositories on GitHub</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
-        </div>
+            {/* Minimal dual buttons: Live Vercel & Git Repo */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
+              <a
+                href={proj.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  padding: '7px 14px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(56, 189, 248, 0.35)',
+                  background: 'rgba(56, 189, 248, 0.06)',
+                  color: '#38bdf8',
+                  fontSize: '11px',
+                  fontFamily: 'var(--font-mono)',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                }}
+                title="Launch Live Vercel App"
+              >
+                <Globe className="w-3 h-3" />
+                <span>Live Vercel</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+
+              <a
+                href={proj.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  padding: '7px 14px',
+                  borderRadius: '20px',
+                  border: '1px solid rgba(255, 140, 89, 0.35)',
+                  background: 'rgba(255, 140, 89, 0.06)',
+                  color: '#ff8c59',
+                  fontSize: '11px',
+                  fontFamily: 'var(--font-mono)',
+                  textDecoration: 'none',
+                  transition: 'all 0.2s ease',
+                }}
+                title="Open GitHub Repository"
+              >
+                <GithubIcon size={12} />
+                <span>Git Repo</span>
+                <ArrowUpRight className="w-3 h-3" />
+              </a>
+            </div>
+          </div>
+        ))}
+
+        <a
+          className="all-work-link"
+          href="https://github.com/kramasrisurya"
+          target="_blank"
+          rel="noreferrer"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '12px',
+            marginTop: '32px',
+            fontSize: '13px',
+            fontFamily: 'var(--font-mono)',
+            color: '#b6a998',
+            textDecoration: 'none',
+          }}
+        >
+          <span>Explore all 20+ open-source repositories on GitHub</span>
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </a>
       </div>
     </section>
   );

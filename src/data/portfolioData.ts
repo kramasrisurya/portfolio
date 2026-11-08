@@ -181,7 +181,7 @@ export const HACKATHONS: Hackathon[] = [
   }
 ];
 
-// BLOCK 1: Top 3 In-Depth S-Tier Systems
+// BLOCK 1: Top 4 In-Depth Systems (Flagship Showcase)
 export const FEATURED_PROJECTS: Project[] = [
   {
     id: "smart-retail-ai",
@@ -269,14 +269,43 @@ export const FEATURED_PROJECTS: Project[] = [
       { step: "03", label: "Course Synthesis", detail: "Dynamic generation of interactive flashcards, quizzes, and key takeaways" },
       { step: "04", label: "Delivery UI", detail: "React 19 interactive classroom interface with progress tracking" }
     ]
+  },
+  {
+    id: "orbit",
+    rank: "04",
+    title: "Orbit System",
+    headline: "Biometric Edge Vision & Zero-Trust Security",
+    category: "Biometric Edge Vision",
+    tier: "🚀 A-Tier (Biometric Edge Vision)",
+    status: "100% Production-Grade",
+    description: "Real-time edge surveillance and automatic lock system utilizing 468-point 3D facial landmark meshes, distance telemetry, and cybernetic diagnostics CLI.",
+    impactMetrics: [
+      "468-point 3D facial landmark mesh tracking at 60 FPS",
+      "Sub-50ms biometric distance telemetry & spoof detection",
+      "Zero-trust cybernetic edge protocol with auto-lockdown state"
+    ],
+    techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "JavaScript", "Docker"],
+    githubUrl: "https://github.com/kramasrisurya/orbit",
+    liveUrl: "https://orbit-system-eight.vercel.app",
+    highlights: [
+      "Engineered real-time 3D facial topology pipeline tracking 468 landmarks via MediaPipe and OpenCV.",
+      "Implemented automated distance-adaptive proximity detection with instant camera-driven lock/unlock state machine.",
+      "Embedded cybernetic terminal diagnostics CLI providing real-time biometric telemetry and edge diagnostics."
+    ],
+    architectureFlow: [
+      { step: "01", label: "Video Capture", detail: "Webcam stream acquisition with adaptive lighting normalization" },
+      { step: "02", label: "MediaPipe 3D Mesh", detail: "468 landmark coordinate extraction & iris orientation estimation" },
+      { step: "03", label: "Proximity Calculation", detail: "Depth-from-landmark triangulation computing operator distance" },
+      { step: "04", label: "Zero-Trust Policy", detail: "Instant biometric verification triggering automated lock/unlock state" }
+    ]
   }
 ];
 
-// BLOCK 2: Additional Ranked Production Systems (Brief Summary Format)
+// BLOCK 2: Additional Ranked Production Systems (Minimal List Format)
 export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
   {
     id: "cosmos",
-    rank: "04",
+    rank: "05",
     title: "COSMOS Space Explorer",
     headline: "NASA Telemetry & Audio Planetary Portal",
     category: "NASA Telemetry & Audio",
@@ -286,19 +315,6 @@ export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
     techStack: ["React", "TypeScript", "NASA Open APIs", "Web Speech API", "Tailwind CSS"],
     githubUrl: "https://github.com/kramasrisurya/cosmos",
     liveUrl: "https://cosmos-app-two.vercel.app"
-  },
-  {
-    id: "orbit",
-    rank: "05",
-    title: "Orbit System",
-    headline: "Biometric Edge Vision & Zero-Trust Security",
-    category: "Biometric Edge Vision",
-    tier: "🚀 A-Tier (Biometric Edge Vision)",
-    status: "100% Production-Grade",
-    description: "Real-time edge surveillance and automatic lock system utilizing 468-point 3D facial landmark meshes, distance telemetry, and cybernetic diagnostics CLI.",
-    techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "JavaScript"],
-    githubUrl: "https://github.com/kramasrisurya/orbit",
-    liveUrl: "https://orbit-system-eight.vercel.app"
   },
   {
     id: "agentic-ai-omnibots",

@@ -203,13 +203,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </ul>
           </div>
 
-          {/* BLOCK 1: Top 3 In-Depth Featured Projects */}
+          {/* BLOCK 1: Top 4 In-Depth Featured Projects */}
           <div style={{ marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '12px' }}>
               <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold' }}>
                 Featured Systems &amp; Architecture (In-Depth)
               </h2>
-              <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>Top 3 Flagship S-Tier</span>
+              <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>Top 4 Flagship Systems</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {FEATURED_PROJECTS.map((proj) => (
@@ -236,13 +236,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
           </div>
 
-          {/* BLOCK 2: Additional Production Systems & Directory (Brief) */}
+          {/* BLOCK 2: Additional Production Systems (Brief Summary) */}
           <div style={{ marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '10px' }}>
               <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold' }}>
                 Additional Production Deployments (Brief Summary)
               </h2>
-              <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>Ranks 04–10 Directory</span>
+              <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>Ranks 05–10 Directory</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {ADDITIONAL_PROJECTS.map((proj) => (
