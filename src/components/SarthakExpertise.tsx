@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Minus, Plus, ArrowUpRight } from 'lucide-react';
 
 export const SarthakExpertise: React.FC = () => {
@@ -109,7 +109,7 @@ export const SarthakExpertise: React.FC = () => {
                       </span>
                     </span>
                     {isExpanded ? (
-                      <Minus className="w-5 h-5 text-amber-400" />
+                      <Minus className="w-5 h-5 text-teal-400" />
                     ) : (
                       <Plus className="w-5 h-5 text-slate-500" />
                     )}
@@ -126,7 +126,7 @@ export const SarthakExpertise: React.FC = () => {
                       style={{
                         fontFamily: 'var(--font-mono)',
                         fontSize: '11px',
-                        color: '#ff8c59',
+                        color: '#2dd4bf',
                         letterSpacing: '0.5px',
                       }}
                     >

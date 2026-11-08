@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { SignalText } from './SignalText';
 
@@ -137,8 +137,8 @@ export const SarthakSignalVisualizer: React.FC<SarthakSignalVisualizerProps> = (
           void main() {
             float d = length(gl_PointCoord - 0.5);
             if (d > 0.5) discard;
-            // Warm golden cream to luminous amber glow
-            vec3 col = mix(vec3(0.85, 0.78, 0.68), vec3(1.0, 0.55, 0.22), smoothstep(0.4, 0.85, vGlow));
+            // Radiant teal/turquoise luminous glow
+            vec3 col = mix(vec3(0.65, 0.88, 0.85), vec3(0.18, 0.83, 0.75), smoothstep(0.4, 0.85, vGlow));
             float alpha = (1.0 - smoothstep(0.05, 0.5, d)) * 0.92;
             gl_FragColor = vec4(col, alpha);
           }
@@ -172,12 +172,11 @@ export const SarthakSignalVisualizer: React.FC<SarthakSignalVisualizerProps> = (
       updateSize();
 
       const targetWeights = new THREE.Vector3();
-      let lastTime = 0;
 
       const animate = (timestamp: number) => {
         if (!isRunning) return;
 
-        if (timestamp - lastTime > 25) {
+        if (true) { // Smooth uncapped 60+ FPS
           uniforms.uTime.value = 0.001 * timestamp;
 
           const tMode = targetModeRef.current;
@@ -198,7 +197,6 @@ export const SarthakSignalVisualizer: React.FC<SarthakSignalVisualizerProps> = (
           if (renderer && scene && camera) {
             renderer.render(scene, camera);
           }
-          lastTime = timestamp;
         }
 
         animId = requestAnimationFrame(animate);
@@ -276,7 +274,7 @@ export const SarthakSignalVisualizer: React.FC<SarthakSignalVisualizerProps> = (
                 const wave = Math.sin(d * 0.45 - t) * 8;
                 ctx.beginPath();
                 ctx.arc(x, y + wave, Math.max(1.2, 2.2 + wave * 0.15), 0, Math.PI * 2);
-                ctx.fillStyle = d < 8 ? '#ff8c59' : 'rgba(235, 215, 195, 0.65)';
+                ctx.fillStyle = d < 8 ? '#2dd4bf' : 'rgba(180, 230, 225, 0.65)';
                 ctx.fill();
               }
             }
@@ -302,7 +300,7 @@ export const SarthakSignalVisualizer: React.FC<SarthakSignalVisualizerProps> = (
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(circle at 50% 50%, rgba(255, 140, 89, 0.12) 0%, rgba(0, 0, 0, 0) 70%)',
+          background: 'radial-gradient(circle at 50% 50%, rgba(45, 212, 191, 0.12) 0%, rgba(0, 0, 0, 0) 70%)',
           pointerEvents: 'none',
         }}
       />

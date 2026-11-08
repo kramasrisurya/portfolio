@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import { X, Download, ExternalLink, Printer, FileText, CheckCircle2 } from 'lucide-react';
 import { PROFILE, HACKATHONS, FEATURED_PROJECTS, ADDITIONAL_PROJECTS, CERTIFICATIONS } from '../data/portfolioData';
 
@@ -63,9 +63,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               style={{
                 padding: '6px',
                 borderRadius: '8px',
-                background: 'rgba(255, 140, 89, 0.1)',
-                border: '1px solid rgba(255, 140, 89, 0.3)',
-                color: '#ff8c59',
+                background: 'rgba(45, 212, 191, 0.1)',
+                border: '1px solid rgba(45, 212, 191, 0.3)',
+                color: '#2dd4bf',
               }}
             >
               <FileText className="w-4 h-4" />
@@ -74,7 +74,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               <h3 style={{ fontSize: '14px', fontWeight: 'bold', color: '#fff' }}>
                 ATS Professional Resume — {PROFILE.name}
               </h3>
-              <p style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: '#ff8c59' }}>
+              <p style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: '#2dd4bf' }}>
                 Updated: November 2026 • 3x Consecutive Hackathon Champion Edition
               </p>
             </div>
@@ -168,7 +168,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <div style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: '#888', marginBottom: '8px' }}>
               {PROFILE.location} | {PROFILE.phone} | {PROFILE.email}
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '12px', fontSize: '11px', fontFamily: 'var(--font-mono)', color: '#ff8c59' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '12px', fontSize: '11px', fontFamily: 'var(--font-mono)', color: '#2dd4bf' }}>
               <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
               <span style={{ color: '#555' }}>|</span>
               <a href={PROFILE.github} target="_blank" rel="noreferrer">GitHub</a>
@@ -179,7 +179,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Professional Summary */}
           <div style={{ marginBottom: '24px' }}>
-            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#2dd4bf', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '8px' }}>
               Professional Summary
             </h2>
             <p style={{ color: '#ccc', lineHeight: '1.6', fontSize: '12.5px' }}>
@@ -189,7 +189,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Education */}
           <div style={{ marginBottom: '24px' }}>
-            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#2dd4bf', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '8px' }}>
               Education
             </h2>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '4px', marginBottom: '4px' }}>
@@ -206,7 +206,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* BLOCK 1: Top 4 In-Depth Featured Projects */}
           <div style={{ marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '12px' }}>
-              <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold' }}>
+              <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#2dd4bf', fontWeight: 'bold' }}>
                 Featured Systems &amp; Architecture (In-Depth)
               </h2>
               <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>Top 4 Flagship Systems</span>
@@ -216,15 +216,15 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <div key={proj.id} style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '14px 16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '6px', marginBottom: '6px' }}>
                     <div>
-                      <span style={{ fontFamily: 'var(--font-mono)', color: '#ff8c59', fontWeight: 700, marginRight: '6px' }}>{proj.rank}</span>
+                      <span style={{ fontFamily: 'var(--font-mono)', color: '#2dd4bf', fontWeight: 700, marginRight: '6px' }}>{proj.rank}</span>
                       <span style={{ fontWeight: 'bold', color: '#fff' }}>{proj.title}</span>
                       <span style={{ color: '#bbb', fontSize: '12px' }}> — {proj.headline}</span>
                       <span style={{ marginLeft: '10px', display: 'inline-flex', gap: '8px' }}>
-                        <a href={proj.githubUrl} target="_blank" rel="noreferrer" style={{ color: '#ff8c59', textDecoration: 'none', fontSize: '11px', fontWeight: 600 }}>[GitHub]</a>
+                        <a href={proj.githubUrl} target="_blank" rel="noreferrer" style={{ color: '#2dd4bf', textDecoration: 'none', fontSize: '11px', fontWeight: 600 }}>[GitHub]</a>
                         <a href={proj.liveUrl} target="_blank" rel="noreferrer" style={{ color: '#38bdf8', textDecoration: 'none', fontSize: '11px', fontWeight: 600 }}>[Live Vercel]</a>
                       </span>
                     </div>
-                    <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#ff8c59' }}>{proj.techStack.slice(0, 5).join(', ')}</span>
+                    <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#2dd4bf' }}>{proj.techStack.slice(0, 5).join(', ')}</span>
                   </div>
                   <ul style={{ paddingLeft: '16px', margin: 0, fontSize: '12px', color: '#ccc', lineHeight: '1.55' }}>
                     {proj.highlights.map((h, i) => (
@@ -239,7 +239,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* BLOCK 2: Additional Production Systems (Brief Summary) */}
           <div style={{ marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '10px' }}>
-              <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold' }}>
+              <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#2dd4bf', fontWeight: 'bold' }}>
                 Additional Production Deployments (Brief Summary)
               </h2>
               <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>Ranks 05–10 Directory</span>
@@ -248,12 +248,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               {ADDITIONAL_PROJECTS.map((proj) => (
                 <div key={proj.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '6px', fontSize: '12px', borderBottom: '1px dashed rgba(255,255,255,0.06)', paddingBottom: '6px' }}>
                   <div>
-                    <span style={{ fontFamily: 'var(--font-mono)', color: '#ff8c59', fontWeight: 700, marginRight: '6px' }}>{proj.rank}</span>
+                    <span style={{ fontFamily: 'var(--font-mono)', color: '#2dd4bf', fontWeight: 700, marginRight: '6px' }}>{proj.rank}</span>
                     <strong style={{ color: '#fff' }}>{proj.title}</strong>
                     <span style={{ color: '#888', margin: '0 6px' }}>|</span>
                     <span style={{ color: '#bbb' }}>{proj.headline}</span>
                     <span style={{ marginLeft: '8px', display: 'inline-flex', gap: '6px' }}>
-                      <a href={proj.githubUrl} target="_blank" rel="noreferrer" style={{ color: '#ff8c59', textDecoration: 'none', fontSize: '11px' }}>[GitHub]</a>
+                      <a href={proj.githubUrl} target="_blank" rel="noreferrer" style={{ color: '#2dd4bf', textDecoration: 'none', fontSize: '11px' }}>[GitHub]</a>
                       <a href={proj.liveUrl} target="_blank" rel="noreferrer" style={{ color: '#38bdf8', textDecoration: 'none', fontSize: '11px' }}>[Live Vercel]</a>
                     </span>
                   </div>
@@ -267,7 +267,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Hackathons */}
           <div style={{ marginBottom: '24px' }}>
-            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#2dd4bf', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '8px' }}>
               Achievements &amp; Hackathons
             </h2>
             <ul style={{ paddingLeft: '16px', margin: 0, fontSize: '12px', color: '#ccc', lineHeight: '1.6' }}>
@@ -281,13 +281,13 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
           {/* Certifications */}
           <div>
-            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '8px' }}>
+            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#2dd4bf', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '8px' }}>
               Certifications
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '8px', fontSize: '12px', color: '#ccc' }}>
               {CERTIFICATIONS.map((c, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <CheckCircle2 className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-teal-400 shrink-0" />
                   <span><strong>{c.name}</strong> — {c.issuer}</span>
                 </div>
               ))}

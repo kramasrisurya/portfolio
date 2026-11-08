@@ -1,4 +1,4 @@
-export interface Project {
+﻿export interface Project {
   id: string;
   rank: string;
   title: string;
@@ -184,32 +184,32 @@ export const HACKATHONS: Hackathon[] = [
 // BLOCK 1: Top 4 In-Depth Systems (Flagship Showcase)
 export const FEATURED_PROJECTS: Project[] = [
   {
-    id: "smart-retail-ai",
+    id: "orbit",
     rank: "01",
-    title: "SmartRetail AI",
-    headline: "Autonomous Spatial AI & Retail Risk Engine",
-    category: "Spatial AI & CV",
-    tier: "🏆 S-Tier (Spatial AI & CV)",
+    title: "Orbit System",
+    headline: "Biometric Edge Vision & Zero-Trust Security",
+    category: "Biometric Edge Vision",
+    tier: "🚀 A-Tier (Biometric Edge Vision)",
     status: "100% Production-Grade",
-    description: "Modular computer vision and spatial intelligence platform implementing person re-identification (ReID), real-time customer journey trajectory tracking, and automated hazard/loss detection.",
+    description: "Real-time edge surveillance and automatic lock system utilizing 468-point 3D facial landmark meshes, distance telemetry, and cybernetic diagnostics CLI.",
     impactMetrics: [
-      "Sub-millisecond state caching with Redis AsyncIO",
-      "Real-time Person Re-Identification across camera handoffs",
-      "Interactive POS Sweethearting & Missed-Scan Simulator"
+      "468-point 3D facial landmark mesh tracking at 60 FPS",
+      "Sub-50ms biometric distance telemetry & spoof detection",
+      "Zero-trust cybernetic edge protocol with auto-lockdown state"
     ],
-    techStack: ["Python", "FastAPI", "Redis AsyncIO", "Docker", "Pytest", "OpenCV", "Pydantic v2"],
-    githubUrl: "https://github.com/kramasrisurya/SmartRetail_AI",
-    liveUrl: "https://smartretail-frontend.vercel.app",
+    techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "JavaScript", "Docker"],
+    githubUrl: "https://github.com/kramasrisurya/orbit",
+    liveUrl: "https://orbit-system-eight.vercel.app",
     highlights: [
-      "Deep feature extraction pipeline for multi-frame human re-identification across non-overlapping camera fields.",
-      "Asynchronous REST endpoints powered by FastAPI and Pydantic v2 with non-blocking event-loop processing.",
-      "Production-ready containerization with multi-stage Docker build and structured logging."
+      "Engineered real-time 3D facial topology pipeline tracking 468 landmarks via MediaPipe and OpenCV.",
+      "Implemented automated distance-adaptive proximity detection with instant camera-driven lock/unlock state machine.",
+      "Embedded cybernetic terminal diagnostics CLI providing real-time biometric telemetry and edge diagnostics."
     ],
     architectureFlow: [
-      { step: "01", label: "Video Ingestion", detail: "RTSP stream capture with frame subsampling and background subtraction" },
-      { step: "02", label: "Spatial ReID", detail: "Feature vector embedding and Euclidean distance metric matching across store zones" },
-      { step: "03", label: "Async State", detail: "Sub-ms trajectory state persistence in Redis with automated TTL eviction" },
-      { step: "04", label: "Hazard Alerts", detail: "Event dispatcher triggering proactive loss-prevention notifications" }
+      { step: "01", label: "Video Capture", detail: "Webcam stream acquisition with adaptive lighting normalization" },
+      { step: "02", label: "MediaPipe 3D Mesh", detail: "468 landmark coordinate extraction & iris orientation estimation" },
+      { step: "03", label: "Proximity Calculation", detail: "Depth-from-landmark triangulation computing operator distance" },
+      { step: "04", label: "Zero-Trust Policy", detail: "Instant biometric verification triggering automated lock/unlock state" }
     ]
   },
   {
@@ -242,61 +242,61 @@ export const FEATURED_PROJECTS: Project[] = [
     ]
   },
   {
-    id: "educraft-ai",
+    id: "cosmos",
     rank: "03",
-    title: "EduCraft AI",
-    headline: "Multimodal GenAI PDF-to-Course Conversion Engine",
-    category: "Multimodal GenAI",
-    tier: "🏆 S-Tier (Multimodal GenAI)",
+    title: "COSMOS Space Explorer",
+    headline: "NASA Telemetry & Audio Planetary Portal",
+    category: "NASA Telemetry & Audio",
+    tier: "🚀 A-Tier (NASA Telemetry & Audio)",
     status: "100% Production-Grade",
-    description: "End-to-end intelligent educational pipeline leveraging Google Gemini multimodal models to extract, decompose, and convert complex textbook PDFs into interactive course modules, quizzes, and summaries.",
+    description: "Real-time space exploration portal streaming deep space photography, Curiosity rover telemetry, and Near-Earth asteroid orbits with Web Speech API audio tours.",
     impactMetrics: [
-      "Strict JSON schema validation eliminating hallucinated schemas",
-      "Zero-latency sample PDF load with 30-day learning habit heatmap",
-      "100% resilient offline-fallback synthesis & interactive quiz grading"
+      "Live NASA Open API telemetry streams from Mars Curiosity Rover",
+      "Integrated Web Speech API procedural synthesized audio planetary narrator",
+      "Interactive Near-Earth Object (NEO) trajectory hazard tracker"
     ],
-    techStack: ["TypeScript", "Google Gemini API", "React 19", "Supabase SSR", "Tailwind CSS", "Vite"],
-    githubUrl: "https://github.com/kramasrisurya/Educraft.ai",
-    liveUrl: "https://educraft-ai-beryl.vercel.app",
+    techStack: ["React", "TypeScript", "NASA Open APIs", "Web Speech API", "Tailwind CSS", "Vite"],
+    githubUrl: "https://github.com/kramasrisurya/cosmos",
+    liveUrl: "https://cosmos-app-two.vercel.app",
     highlights: [
-      "Leveraged @google/genai SDK with structured output constraints to guarantee deterministic lesson hierarchy.",
-      "Modern full-stack interface built on React 19 with optimistic state transitions and fluid module navigation.",
-      "Secure user course storage, session management, and PDF caching powered by Supabase SSR auth."
+      "Real-time deep space telemetry portal aggregating NASA Curiosity rover sols, atmospheric pressure, and mission logs.",
+      "Engineered voice-guided planetary tours with dynamic speech synthesis via Web Speech API.",
+      "Integrated orbital distance calculations and Near-Earth asteroid close-approach tracking."
     ],
     architectureFlow: [
-      { step: "01", label: "Document Parse", detail: "Multi-page PDF segmentation extracting text, diagrams, and hierarchy" },
-      { step: "02", label: "Gemini Engine", detail: "Multimodal prompt chains enforcing strict Pydantic/Zod structured schemas" },
-      { step: "03", label: "Course Synthesis", detail: "Dynamic generation of interactive flashcards, quizzes, and key takeaways" },
-      { step: "04", label: "Delivery UI", detail: "React 19 interactive classroom interface with progress tracking" }
+      { step: "01", label: "NASA Data Ingest", detail: "Real-time REST fetch from NASA APIs with client-side cache and telemetry parsing" },
+      { step: "02", label: "Audio Synthesizer", detail: "Dynamic speech narration via Web Speech API with pitch and rate modulation" },
+      { step: "03", label: "Telemetry Pipeline", detail: "Curiosity Mars sol timeline conversion and atmospheric data visualization" },
+      { step: "04", label: "Interactive Portal", detail: "Responsive deep-space imagery and Near-Earth orbital flyby inspector" }
     ]
   },
   {
-    id: "orbit",
+    id: "smart-retail-ai",
     rank: "04",
-    title: "Orbit System",
-    headline: "Biometric Edge Vision & Zero-Trust Security",
-    category: "Biometric Edge Vision",
-    tier: "🚀 A-Tier (Biometric Edge Vision)",
+    title: "SmartRetail AI",
+    headline: "Autonomous Spatial AI & Retail Risk Engine",
+    category: "Spatial AI & CV",
+    tier: "🏆 S-Tier (Spatial AI & CV)",
     status: "100% Production-Grade",
-    description: "Real-time edge surveillance and automatic lock system utilizing 468-point 3D facial landmark meshes, distance telemetry, and cybernetic diagnostics CLI.",
+    description: "Modular computer vision and spatial intelligence platform implementing person re-identification (ReID), real-time customer journey trajectory tracking, and automated hazard/loss detection.",
     impactMetrics: [
-      "468-point 3D facial landmark mesh tracking at 60 FPS",
-      "Sub-50ms biometric distance telemetry & spoof detection",
-      "Zero-trust cybernetic edge protocol with auto-lockdown state"
+      "Sub-millisecond state caching with Redis AsyncIO",
+      "Real-time Person Re-Identification across camera handoffs",
+      "Interactive POS Sweethearting & Missed-Scan Simulator"
     ],
-    techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "JavaScript", "Docker"],
-    githubUrl: "https://github.com/kramasrisurya/orbit",
-    liveUrl: "https://orbit-system-eight.vercel.app",
+    techStack: ["Python", "FastAPI", "Redis AsyncIO", "Docker", "Pytest", "OpenCV", "Pydantic v2"],
+    githubUrl: "https://github.com/kramasrisurya/SmartRetail_AI",
+    liveUrl: "https://smartretail-frontend.vercel.app",
     highlights: [
-      "Engineered real-time 3D facial topology pipeline tracking 468 landmarks via MediaPipe and OpenCV.",
-      "Implemented automated distance-adaptive proximity detection with instant camera-driven lock/unlock state machine.",
-      "Embedded cybernetic terminal diagnostics CLI providing real-time biometric telemetry and edge diagnostics."
+      "Deep feature extraction pipeline for multi-frame human re-identification across non-overlapping camera fields.",
+      "Asynchronous REST endpoints powered by FastAPI and Pydantic v2 with non-blocking event-loop processing.",
+      "Production-ready containerization with multi-stage Docker build and structured logging."
     ],
     architectureFlow: [
-      { step: "01", label: "Video Capture", detail: "Webcam stream acquisition with adaptive lighting normalization" },
-      { step: "02", label: "MediaPipe 3D Mesh", detail: "468 landmark coordinate extraction & iris orientation estimation" },
-      { step: "03", label: "Proximity Calculation", detail: "Depth-from-landmark triangulation computing operator distance" },
-      { step: "04", label: "Zero-Trust Policy", detail: "Instant biometric verification triggering automated lock/unlock state" }
+      { step: "01", label: "Video Ingestion", detail: "RTSP stream capture with frame subsampling and background subtraction" },
+      { step: "02", label: "Spatial ReID", detail: "Feature vector embedding and Euclidean distance metric matching across store zones" },
+      { step: "03", label: "Async State", detail: "Sub-ms trajectory state persistence in Redis with automated TTL eviction" },
+      { step: "04", label: "Hazard Alerts", detail: "Event dispatcher triggering proactive loss-prevention notifications" }
     ]
   }
 ];
@@ -304,17 +304,17 @@ export const FEATURED_PROJECTS: Project[] = [
 // BLOCK 2: Additional Ranked Production Systems (Minimal List Format)
 export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
   {
-    id: "cosmos",
+    id: "educraft-ai",
     rank: "05",
-    title: "COSMOS Space Explorer",
-    headline: "NASA Telemetry & Audio Planetary Portal",
-    category: "NASA Telemetry & Audio",
-    tier: "🚀 A-Tier (NASA Telemetry & Audio)",
+    title: "EduCraft AI",
+    headline: "Multimodal GenAI PDF-to-Course Conversion Engine",
+    category: "Multimodal GenAI",
+    tier: "🏆 S-Tier (Multimodal GenAI)",
     status: "100% Production-Grade",
-    description: "Real-time space exploration portal streaming deep space photography, Curiosity rover telemetry, and Near-Earth asteroid orbits with Web Speech API audio tours.",
-    techStack: ["React", "TypeScript", "NASA Open APIs", "Web Speech API", "Tailwind CSS"],
-    githubUrl: "https://github.com/kramasrisurya/cosmos",
-    liveUrl: "https://cosmos-app-two.vercel.app"
+    description: "End-to-end intelligent educational pipeline leveraging Google Gemini multimodal models to extract, decompose, and convert complex textbook PDFs into interactive course modules, quizzes, and summaries.",
+    techStack: ["TypeScript", "Google Gemini API", "React 19", "Supabase SSR", "Tailwind CSS", "Vite"],
+    githubUrl: "https://github.com/kramasrisurya/Educraft.ai",
+    liveUrl: "https://educraft-ai-beryl.vercel.app"
   },
   {
     id: "agentic-ai-omnibots",
@@ -341,45 +341,6 @@ export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
     techStack: ["TypeScript", "React", "Node.js", "Express", "Vercel Serverless"],
     githubUrl: "https://github.com/kramasrisurya/driveoptimizerr",
     liveUrl: "https://driveoptimizerr.vercel.app"
-  },
-  {
-    id: "expense-teacker",
-    rank: "08",
-    title: "Expense Tracker",
-    headline: "Financial CRUD & Budget Threshold Monitor",
-    category: "Financial CRUD",
-    tier: "🛠️ B-Tier (Financial CRUD)",
-    status: "100% Production-Grade",
-    description: "Modern personal finance application featuring automated CSV statement export, category budget threshold tracking, and serverless persistence.",
-    techStack: ["React", "TypeScript", "Vercel Serverless Functions", "Tailwind CSS"],
-    githubUrl: "https://github.com/kramasrisurya/expense-teacker",
-    liveUrl: "https://expense-teacker.vercel.app"
-  },
-  {
-    id: "portfolio",
-    rank: "09",
-    title: "Personal Portfolio",
-    headline: "Developer Hub & WebGL Telemetry",
-    category: "Developer Hub",
-    tier: "🛠️ B-Tier (Developer Hub)",
-    status: "100% Production-Grade",
-    description: "Award-winning editorial portfolio engineered with React 19, Three.js GLSL shaders, Lenis smooth scrolling, and dark luxury aesthetic.",
-    techStack: ["React 19", "Three.js", "GLSL Shaders", "GSAP", "Lenis", "Tailwind CSS"],
-    githubUrl: "https://github.com/kramasrisurya/portfolio",
-    liveUrl: "https://rama-sri-surya-portfolio.vercel.app"
-  },
-  {
-    id: "gpttest-studio",
-    rank: "10",
-    title: "GPTTest Studio",
-    headline: "Basic Scratchpad & Prompt Engineering Playground",
-    category: "Basic Scratchpad",
-    tier: "⚠️ C-Tier (Basic Scratchpad)",
-    status: "Prototype / Minimal",
-    description: "Interactive playground and scratchpad for benchmarking model prompts, testing token boundaries, and comparing response latencies.",
-    techStack: ["JavaScript", "HTML5", "CSS3", "OpenAI API"],
-    githubUrl: "https://github.com/kramasrisurya",
-    liveUrl: "https://gpttest-swart.vercel.app"
   }
 ];
 

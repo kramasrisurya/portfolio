@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEditorialMotion } from './hooks/useEditorialMotion';
 import { MotionToggle } from './components/MotionToggle';
+import { InteractiveGlowCursor } from './components/InteractiveGlowCursor';
 import { SarthakBackdrop } from './components/SarthakBackdrop';
 import { SarthakNav } from './components/SarthakNav';
 import { SarthakHero } from './components/SarthakHero';
@@ -25,6 +26,9 @@ export const App: React.FC = () => {
 
   return (
     <>
+      {/* Dynamic Cursor with Turquoise Liquid Aura & Hover Magnetic Reticle */}
+      <InteractiveGlowCursor />
+
       {/* Exact Visual Backdrop with Surya's Masked Portrait */}
       <SarthakBackdrop />
 

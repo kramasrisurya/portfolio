@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { HACKATHONS } from '../data/portfolioData';
 
 export const SarthakHackathons: React.FC = () => {
@@ -57,7 +57,7 @@ export const SarthakHackathons: React.FC = () => {
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: '11px',
-                  color: '#ff8c59',
+                  color: '#2dd4bf',
                   marginTop: '8px',
                 }}
               >

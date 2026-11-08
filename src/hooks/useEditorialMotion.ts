@@ -140,7 +140,51 @@ export const useEditorialMotion = () => {
           );
         });
 
-        // D. Data Editorial Reveal Items
+        // D. Flagship Interactive Cards Entrance
+        const flagshipCards = gsap.utils.toArray<HTMLElement>('.flagship-interactive-card');
+        if (flagshipCards.length > 0) {
+          gsap.fromTo(
+            flagshipCards,
+            { y: 35, opacity: 0.3 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.85,
+              stagger: 0.15,
+              ease: 'power3.out',
+              clearProps: 'opacity',
+              scrollTrigger: {
+                trigger: flagshipCards[0],
+                start: 'top 88%',
+                once: true,
+              },
+            }
+          );
+        }
+
+        // E. Brief Minimal Production Rows Entrance
+        const briefRows = gsap.utils.toArray<HTMLElement>('.brief-row-interactive');
+        if (briefRows.length > 0) {
+          gsap.fromTo(
+            briefRows,
+            { x: -20, opacity: 0 },
+            {
+              x: 0,
+              opacity: 1,
+              duration: 0.75,
+              stagger: 0.1,
+              ease: 'power2.out',
+              clearProps: 'opacity',
+              scrollTrigger: {
+                trigger: briefRows[0],
+                start: 'top 90%',
+                once: true,
+              },
+            }
+          );
+        }
+
+        // F. Data Editorial Reveal Items
         const editorialTargets = gsap.utils.toArray<HTMLElement>(
           '[data-editorial-reveal], .case-body > section, .editorial-section, .work-piece'
         );
@@ -163,7 +207,7 @@ export const useEditorialMotion = () => {
           );
         });
 
-        // E. General [data-reveal] Items
+        // G. General [data-reveal] Items
         const revealTargets = gsap.utils.toArray<HTMLElement>('[data-reveal]');
         revealTargets.forEach((el) => {
           gsap.fromTo(
@@ -184,7 +228,7 @@ export const useEditorialMotion = () => {
           );
         });
 
-        // F. Work Artwork Clip-Path Inset Wipe on Scroll
+        // H. Work Artwork Clip-Path Inset Wipe on Scroll
         const artworkTargets = gsap.utils.toArray<HTMLElement>('.work-artwork');
         artworkTargets.forEach((artwork) => {
           gsap.fromTo(
@@ -203,7 +247,7 @@ export const useEditorialMotion = () => {
           );
         });
 
-        // G. Impact Value Letter-Spacing Scrub
+        // I. Impact Value Letter-Spacing Scrub
         const impactValue = document.querySelector('.impact-value');
         if (impactValue) {
           gsap.fromTo(
@@ -222,7 +266,7 @@ export const useEditorialMotion = () => {
           );
         }
 
-        // H. Timeline & Milestone Cards Horizontal Entrance
+        // J. Timeline & Milestone Cards Horizontal Entrance
         const milestoneTargets = gsap.utils.toArray<HTMLElement>(
           '.timeline article, .brand-milestones > div'
         );

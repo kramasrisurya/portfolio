@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Terminal, CornerDownLeft, Play, RefreshCw } from 'lucide-react';
 import { PROFILE, HACKATHONS, FEATURED_PROJECTS } from '../data/portfolioData';
 
@@ -18,7 +18,7 @@ export const SarthakTerminal: React.FC = () => {
           <div>[OK] Accolades: 3x Consecutive Hackathon Champion (IIIT Kottayam, Epochon 2.0, Sem 1)</div>
           <div>[OK] Focus: Deliberative Multi-Agent Workflows, Person ReID Spatial Vision, and Gemini API.</div>
           <div style={{ color: '#888', marginTop: '4px' }}>
-            Type <span style={{ color: '#ff8c59' }}>'help'</span> to see available commands or click the shortcut chips below.
+            Type <span style={{ color: '#2dd4bf' }}>'help'</span> to see available commands or click the shortcut chips below.
           </div>
         </div>
       ),
@@ -38,7 +38,7 @@ export const SarthakTerminal: React.FC = () => {
       case 'help':
         output = (
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', lineHeight: '1.6', color: '#ccc' }}>
-            <div style={{ color: '#ff8c59', fontWeight: 'bold' }}>Available Commands:</div>
+            <div style={{ color: '#2dd4bf', fontWeight: 'bold' }}>Available Commands:</div>
             <div>• <span style={{ color: '#10b981' }}>projects</span> : Inspect featured AI &amp; Vision systems</div>
             <div>• <span style={{ color: '#10b981' }}>hackathons</span> : View 3x hackathon championship records</div>
             <div>• <span style={{ color: '#10b981' }}>skills</span> : Inspect technical stack &amp; proficiencies</div>
@@ -56,7 +56,7 @@ export const SarthakTerminal: React.FC = () => {
               <div key={idx} style={{ paddingLeft: '8px', borderLeft: '2px solid rgba(16, 185, 129, 0.4)', marginTop: '6px' }}>
                 <span style={{ color: '#fff', fontWeight: 'bold' }}>{p.title}</span> ({p.category})
                 <div style={{ color: '#aaa', fontSize: '11px' }}>{p.headline}</div>
-                <div style={{ color: '#ff8c59', fontSize: '11px' }}>Stack: {p.techStack.join(', ')}</div>
+                <div style={{ color: '#2dd4bf', fontSize: '11px' }}>Stack: {p.techStack.join(', ')}</div>
               </div>
             ))}
           </div>
@@ -66,9 +66,9 @@ export const SarthakTerminal: React.FC = () => {
       case 'hackathons':
         output = (
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', lineHeight: '1.6', color: '#ccc' }}>
-            <div style={{ color: '#ff8c59', fontWeight: 'bold' }}>3x Consecutive Hackathon Championships:</div>
+            <div style={{ color: '#2dd4bf', fontWeight: 'bold' }}>3x Consecutive Hackathon Championships:</div>
             {HACKATHONS.map((h, idx) => (
-              <div key={idx} style={{ paddingLeft: '8px', borderLeft: '2px solid rgba(255, 140, 89, 0.4)', marginTop: '6px' }}>
+              <div key={idx} style={{ paddingLeft: '8px', borderLeft: '2px solid rgba(45, 212, 191, 0.4)', marginTop: '6px' }}>
                 <span style={{ color: '#fff', fontWeight: 'bold' }}>{h.title}</span> — {h.semester} ({h.year})
                 <div style={{ color: '#ccc', fontSize: '11px' }}>{h.placement} at {h.organization}</div>
                 <div style={{ color: '#888', fontSize: '11px' }}>{h.projectFocus}</div>
@@ -82,7 +82,7 @@ export const SarthakTerminal: React.FC = () => {
       case 'stack':
         output = (
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', lineHeight: '1.6', color: '#ccc' }}>
-            <div style={{ color: '#ff8c59', fontWeight: 'bold' }}>Engineering Capabilities:</div>
+            <div style={{ color: '#2dd4bf', fontWeight: 'bold' }}>Engineering Capabilities:</div>
             <div>• <span style={{ color: '#fff' }}>GenAI &amp; Agents:</span> Google Gemini API, Multi-Agent Deliberative Reasoning, Structured Output Schemas</div>
             <div>• <span style={{ color: '#fff' }}>Vision &amp; Deep Learning:</span> PyTorch, Person ReID, OpenCV, CNNs, Object Tracking</div>
             <div>• <span style={{ color: '#fff' }}>Backend &amp; Distributed:</span> FastAPI, Redis AsyncIO, Supabase SSR, Docker, SQLAlchemy</div>
@@ -95,10 +95,10 @@ export const SarthakTerminal: React.FC = () => {
         output = (
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', lineHeight: '1.6', color: '#ccc' }}>
             <div style={{ color: '#10b981', fontWeight: 'bold' }}>Direct Communication:</div>
-            <div>• Email: <a href={`mailto:${PROFILE.email}`} style={{ color: '#ff8c59', textDecoration: 'underline' }}>{PROFILE.email}</a></div>
+            <div>• Email: <a href={`mailto:${PROFILE.email}`} style={{ color: '#2dd4bf', textDecoration: 'underline' }}>{PROFILE.email}</a></div>
             <div>• Phone: <span style={{ color: '#fff' }}>{PROFILE.phone}</span></div>
-            <div>• GitHub: <a href={PROFILE.github} target="_blank" rel="noreferrer" style={{ color: '#ff8c59', textDecoration: 'underline' }}>{PROFILE.github}</a></div>
-            <div>• LinkedIn: <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" style={{ color: '#ff8c59', textDecoration: 'underline' }}>{PROFILE.linkedin}</a></div>
+            <div>• GitHub: <a href={PROFILE.github} target="_blank" rel="noreferrer" style={{ color: '#2dd4bf', textDecoration: 'underline' }}>{PROFILE.github}</a></div>
+            <div>• LinkedIn: <a href={PROFILE.linkedin} target="_blank" rel="noreferrer" style={{ color: '#2dd4bf', textDecoration: 'underline' }}>{PROFILE.linkedin}</a></div>
           </div>
         );
         break;
@@ -111,7 +111,7 @@ export const SarthakTerminal: React.FC = () => {
       default:
         output = (
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: '#888' }}>
-            Command not recognized: <span style={{ color: '#ff8c59' }}>'{raw}'</span>. Type <button onClick={() => handleCommand('help')} style={{ color: '#10b981', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer' }}>help</button> to see options.
+            Command not recognized: <span style={{ color: '#2dd4bf' }}>'{raw}'</span>. Type <button onClick={() => handleCommand('help')} style={{ color: '#10b981', textDecoration: 'underline', background: 'none', border: 'none', cursor: 'pointer' }}>help</button> to see options.
           </div>
         );
         break;
@@ -231,9 +231,9 @@ export const SarthakTerminal: React.FC = () => {
               <button
                 type="submit"
                 style={{
-                  background: 'rgba(255, 140, 89, 0.1)',
-                  border: '1px solid rgba(255, 140, 89, 0.3)',
-                  color: '#ff8c59',
+                  background: 'rgba(45, 212, 191, 0.1)',
+                  border: '1px solid rgba(45, 212, 191, 0.3)',
+                  color: '#2dd4bf',
                   borderRadius: '6px',
                   padding: '4px 8px',
                   cursor: 'pointer',

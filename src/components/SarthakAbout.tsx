@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { SarthakSignalVisualizer } from './SarthakSignalVisualizer';
 import { SignalText } from './SignalText';
@@ -58,7 +58,7 @@ export const SarthakAbout: React.FC = () => {
 
           <p>
             Computer Science undergraduate at Amrita Vishwa Vidyapeetham (Class of 2029) and{' '}
-            <strong className="copy-highlight" style={{ color: '#ff8c59' }}>
+            <strong className="copy-highlight" style={{ color: '#2dd4bf' }}>
               3x consecutive hackathon champion
             </strong>{' '}
             (IIIT Kottayam, Epochon 2.0, Sem 1). Rather than building fragile prompt wrappers, I engineer
