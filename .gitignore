@@ -25,13 +25,12 @@ sarthak_portfolio.html
 sarthak_structure.html
 sarthak_styles.css
 sarthak-signal.webp
-RAMA_SRI_SURYA_ATS_RESUME.pdf
 surya_cutout.png
 surya_editorial_test.webp
-resume.html
 .planning/
 
 # Whitelist public assets
 !public/
 !public/**
 !src/**
+.vercel

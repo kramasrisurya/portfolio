@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rama Sri Surya - ATS Resume</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 6mm 10mm 6mm 10mm;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #111827;
+            background-color: #ffffff;
+            line-height: 1.28;
+            font-size: 8.2pt;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 4px;
+            border-bottom: 1.5px solid #111827;
+            padding-bottom: 3px;
+        }
+        .header h1 {
+            font-size: 15.5pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #0f172a;
+            margin-bottom: 1px;
+            text-transform: uppercase;
+        }
+        .contact-info {
+            font-size: 8.2pt;
+            color: #374151;
+            margin-bottom: 1px;
+        }
+        .links {
+            font-size: 8.2pt;
+        }
+        .links a {
+            color: #0369a1;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .separator {
+            margin: 0 4px;
+            color: #9ca3af;
+        }
+        .section {
+            margin-bottom: 4px;
+        }
+        .section-title {
+            font-size: 9pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0f172a;
+            border-bottom: 1px solid #94a3b8;
+            padding-bottom: 1px;
+            margin-bottom: 2.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .section-title span.badge {
+            font-size: 7.2pt;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        .summary-text {
+            font-size: 8pt;
+            color: #1f2937;
+            text-align: justify;
+            line-height: 1.26;
+        }
+        .entry {
+            margin-bottom: 3.5px;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+        .entry-title {
+            font-weight: 700;
+            font-size: 8.4pt;
+            color: #111827;
+        }
+        .entry-subtitle {
+            font-weight: 600;
+            font-size: 8pt;
+            color: #374151;
+        }
+        .entry-date {
+            font-size: 7.8pt;
+            color: #4b5563;
+            font-weight: 500;
+        }
+        .project-links {
+            display: inline-flex;
+            gap: 4px;
+            margin-left: 4px;
+        }
+        .project-link-git {
+            font-size: 7.6pt;
+            color: #c2410c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .project-link-vercel {
+            font-size: 7.6pt;
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .bullets {
+            list-style-type: disc;
+            padding-left: 13px;
+            margin-top: 1px;
+        }
+        .bullets li {
+            font-size: 7.9pt;
+            color: #1f2937;
+            margin-bottom: 1px;
+            line-height: 1.25;
+        }
+        .brief-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5px;
+        }
+        .brief-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 7.8pt;
+            padding: 0.5px 0;
+            border-bottom: 0.5px solid #f1f5f9;
+        }
+        .brief-item .item-main {
+            color: #1f2937;
+        }
+        .brief-item .item-rank {
+            font-family: monospace;
+            font-weight: 700;
+            color: #c2410c;
+            margin-right: 4px;
+        }
+        .brief-item .item-name {
+            font-weight: 700;
+            color: #111827;
+        }
+        .brief-item .item-stack {
+            font-family: monospace;
+            font-size: 7.2pt;
+            color: #64748b;
+        }
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .skills-list li {
+            font-size: 7.9pt;
+            color: #1f2937;
+            margin-bottom: 1.5px;
+            line-height: 1.25;
+        }
+        .skills-category {
+            font-weight: 700;
+            color: #111827;
+        }
+        .certs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 1.5px;
+            column-gap: 10px;
+            padding-left: 13px;
+        }
+        .certs-grid li {
+            font-size: 7.8pt;
+            color: #1f2937;
+        }
+        .cert-name {
+            font-weight: 600;
+            color: #111827;
+        }
+        .cert-issuer {
+            color: #4b5563;
+        }
+
+        @media print {
+            body {
+                background: none;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>RAMA SRI SURYA</h1>
+        <div class="contact-info">
+            Visakhapatnam / Kollam, India <span class="separator">|</span> +91 7396339936 <span class="separator">|</span> kramasrisurya@gmail.com
+        </div>
+        <div class="links">
+            <a href="https://linkedin.com/in/rama-sri-surya">LinkedIn</a>
+            <span class="separator">|</span>
+            <a href="https://github.com/kramasrisurya">GitHub</a>
+            <span class="separator">|</span>
+            <a href="https://surya.isroot.in">Portfolio (surya.isroot.in)</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p class="summary-text">
+            AI & Autonomous Systems Engineer and Computer Science undergraduate with hands-on experience building deliberative multi-agent reasoning architectures, spatial computer vision pipelines, and production-grade LLM applications. 3x Consecutive Hackathon Champion (Semester 1, Semester 2 / Epochon 2.0, Semester 3 / IIIT Kottayam) with demonstrated engineering rigor in Python, PyTorch, FastAPI, and Google Gemini API. Proven ability to architect resilient distributed systems with sub-millisecond Redis state caching and strict schema validation.
+        </p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">Amrita Vishwa Vidyapeetham</span> — <span class="entry-subtitle">Kollam, Kerala, India</span>
+                </div>
+                <div class="entry-date">Expected Graduation: 2029</div>
+            </div>
+            <div class="entry-subtitle">Bachelor of Technology in Computer Science & Engineering</div>
+            <ul class="bullets">
+                <li><strong>Relevant Coursework:</strong> Data Structures & Algorithms, Object-Oriented Programming, Linear Algebra, Probability & Statistics, Database Management Systems, Deep Learning.</li>
+                <li><strong>Honors:</strong> 3x Consecutive Inter-College Hackathon Winner (Sem 1, Sem 2 / Epochon 2.0, Sem 3 / IIIT Kottayam).</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <ul class="skills-list">
+            <li><span class="skills-category">Programming Languages:</span> Python (Proficient), TypeScript, JavaScript, Java, C, SQL</li>
+            <li><span class="skills-category">AI, ML & Deep Learning:</span> PyTorch, TensorFlow, Keras 3, Scikit-learn, CNNs, Computer Vision, Person Re-Identification (ReID), Spatial Tracking</li>
+            <li><span class="skills-category">Generative AI & LLMs:</span> Google Gemini API (@google/genai SDK), Multi-Agent Systems, Deliberative Reasoning Loops, Prompt Chains, Structured Output Schemas</li>
+            <li><span class="skills-category">Backend & Cloud Systems:</span> FastAPI, Uvicorn, Pydantic (v2), SQLAlchemy (AsyncIO), Redis, Express.js, Supabase, Vercel Serverless, REST APIs</li>
+            <li><span class="skills-category">DevOps, Data & Tooling:</span> Docker, Linux/Bash, Git, GitHub Actions, Ruff, Pytest, Pandas, NumPy, Vite, Bun</li>
+        </ul>
+    </div>
+
+    <!-- BLOCK 1: Top 3 In-Depth S-Tier Systems -->
+    <div class="section">
+        <div class="section-title">
+            <span>Featured Systems & Architecture (In-Depth)</span>
+            <span class="badge">Top 3 Flagship S-Tier</span>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">01. SmartRetail AI — Autonomous Spatial AI & Retail Risk Engine</span>
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/SmartRetail_AI">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://smartretail-frontend.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <div class="entry-date">Python, FastAPI, Redis AsyncIO, Docker, Pytest</div>
+            </div>
+            <ul class="bullets">
+                <li>Engineered a modular computer vision and spatial intelligence platform implementing person re-identification (ReID), real-time customer trajectory tracking, and automated hazard/sweethearting detection.</li>
+                <li>Architected non-blocking asynchronous REST services using FastAPI, Pydantic v2, and Redis AsyncIO, achieving sub-millisecond state caching across camera handoffs.</li>
+                <li>Built a production-grade multi-stage Docker deployment pipeline verified by comprehensive pytest integration and unit test suites.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">02. S2 Legal AI (OmniBots) — Autonomous Multi-Agent Reasoning System</span>
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/s2-legal-ai">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://s2-legal-ai.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <div class="entry-date">Python, TypeScript, Google Gemini API, Multi-Agent Loops</div>
+            </div>
+            <ul class="bullets">
+                <li>Won 1st Place at Epochon 2.0 Hackathon for designing an autonomous multi-agent reasoning architecture that triages legal filings and verifies statutory filing deadlines.</li>
+                <li>Implemented a deliberative consensus pattern where specialized agents cross-audit findings against domain constraints prior to returning recommendations, eliminating LLM drift.</li>
+                <li>Automated extraction of critical court timelines, jurisdictional filing windows, and structured court memo export.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div>
+                    <span class="entry-title">03. EduCraft AI — Multimodal GenAI PDF-to-Course Conversion Engine</span>
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/Educraft.ai">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://educraft-ai-beryl.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <div class="entry-date">TypeScript, Google Gemini API, React 19, Supabase SSR, Vite</div>
+            </div>
+            <ul class="bullets">
+                <li>Developed an end-to-end educational pipeline utilizing Google Gemini multimodal models to extract, decompose, and convert complex textbook PDFs into interactive course modules and quizzes.</li>
+                <li>Enforced strict structured output schemas via the @google/genai SDK, ensuring deterministic JSON lesson hierarchies and automated quiz grading.</li>
+                <li>Engineered a high-performance React 19 interface with Supabase SSR session authentication and resilient offline fallbacks.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BLOCK 2: Additional Ranked Production Systems (Brief Summary) -->
+    <div class="section">
+        <div class="section-title">
+            <span>Additional Production Deployments & Systems (Brief)</span>
+            <span class="badge">Ranks 04–10 Directory</span>
+        </div>
+        <div class="brief-grid">
+            <div class="brief-item">
+                <div class="item-main">
+                    <span class="item-rank">04</span>
+                    <span class="item-name">COSMOS Space Explorer</span> — NASA Telemetry & Audio Planetary Portal
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/cosmos">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://cosmos-app-two.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <span class="item-stack">React • NASA API • Web Speech</span>
+            </div>
+            <div class="brief-item">
+                <div class="item-main">
+                    <span class="item-rank">05</span>
+                    <span class="item-name">Orbit System</span> — Biometric Edge Vision & Zero-Trust Security System
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/orbit">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://orbit-system-eight.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <span class="item-stack">Python • FastAPI • MediaPipe 3D</span>
+            </div>
+            <div class="brief-item">
+                <div class="item-main">
+                    <span class="item-rank">06</span>
+                    <span class="item-name">Agentic AI Omni-Bots</span> — Industrial Robotics & Defect Quarantine Factory
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/agentic-ai-omnibots">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://agentic-ai-omnibots.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <span class="item-stack">React • Agentic AI • Web Audio</span>
+            </div>
+            <div class="brief-item">
+                <div class="item-main">
+                    <span class="item-rank">07</span>
+                    <span class="item-name">Drive Storage Optimizer</span> — Cloud Storage Intelligence & Media De-duplication
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/driveoptimizerr">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://driveoptimizerr.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <span class="item-stack">Node • Express • React • Vercel</span>
+            </div>
+            <div class="brief-item">
+                <div class="item-main">
+                    <span class="item-rank">08</span>
+                    <span class="item-name">Expense Tracker</span> — Financial CRUD & Budget Threshold Monitor
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/expense-teacker">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://expense-teacker.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <span class="item-stack">React • Serverless • Tailwind</span>
+            </div>
+            <div class="brief-item">
+                <div class="item-main">
+                    <span class="item-rank">09</span>
+                    <span class="item-name">Personal Portfolio</span> — Developer Hub & WebGL Telemetry
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya/portfolio">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://rama-sri-surya-portfolio.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <span class="item-stack">React 19 • Three.js • GLSL</span>
+            </div>
+            <div class="brief-item">
+                <div class="item-main">
+                    <span class="item-rank">10</span>
+                    <span class="item-name">GPTTest Studio</span> — LLM Test Workbench & Prompt Scratchpad
+                    <span class="project-links">
+                        <a class="project-link-git" href="https://github.com/kramasrisurya">[GitHub]</a>
+                        <a class="project-link-vercel" href="https://gpttest-swart.vercel.app">[Live Vercel]</a>
+                    </span>
+                </div>
+                <span class="item-stack">React • Prompt Bench • Vercel</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Achievements & Hackathons</div>
+        <ul class="bullets">
+            <li><strong>Hackathon Winner (3rd Semester — IIIT Kottayam):</strong> Secured 1st place competing against elite inter-college engineering teams for end-to-end intelligent systems engineering under 36h sprint.</li>
+            <li><strong>Hackathon Winner (2nd Semester / Epochon 2.0):</strong> Won 1st place top honors for architecting autonomous multi-agent deliberative reasoning engine (OmniBots).</li>
+            <li><strong>Hackathon Winner (1st Semester):</strong> Secured 1st place in university-wide hackathon during freshman year for modular software architecture.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Certifications</div>
+        <ul class="certs-grid">
+            <li><span class="cert-name">AIML Certification Program</span> — <span class="cert-issuer">IIT Patna</span></li>
+            <li><span class="cert-name">AWS Cloud Practitioner Essentials</span> — <span class="cert-issuer">Amazon Web Services</span></li>
+            <li><span class="cert-name">Computer Vision with Azure Cognitive Services</span> — <span class="cert-issuer">Microsoft</span></li>
+            <li><span class="cert-name">AI & Generative AI For All</span> — <span class="cert-issuer">Infosys Springboard</span></li>
+            <li><span class="cert-name">Data Analytics Job Simulation</span> — <span class="cert-issuer">Deloitte (Forage)</span></li>
+        </ul>
+    </div>
+
+</body>
+</html>
