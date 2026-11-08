@@ -1,19 +1,36 @@
 export interface Project {
   id: string;
+  rank: string;
   title: string;
   headline: string;
-  category: 'Agentic AI' | 'Computer Vision' | 'GenAI' | 'Deep Learning';
+  category: string;
+  tier: string;
+  status: string;
   description: string;
   impactMetrics: string[];
   techStack: string[];
   githubUrl: string;
-  liveUrl?: string;
+  liveUrl: string;
   highlights: string[];
   architectureFlow: {
     step: string;
     label: string;
     detail: string;
   }[];
+}
+
+export interface AdditionalProject {
+  id: string;
+  rank: string;
+  title: string;
+  headline: string;
+  category: string;
+  tier: string;
+  status: string;
+  description: string;
+  techStack: string[];
+  githubUrl: string;
+  liveUrl: string;
 }
 
 export interface Hackathon {
@@ -71,7 +88,7 @@ export const PROFILE = {
   stats: [
     { label: "Hackathon Victories", value: "3x", detail: "IIIT Kottayam, Epochon 2.0 & Sem 1" },
     { label: "State Latency", value: "<1ms", detail: "FastAPI + Redis AsyncIO state store" },
-    { label: "CNN Benchmark", value: ">98%", detail: "Handwritten digit recognition accuracy" },
+    { label: "Production Deployments", value: "10+", detail: "Vercel + GitHub Verified Stacks" },
     { label: "Core AI Systems", value: "5+", detail: "Autonomous Agents, Spatial AI & CV" },
   ]
 };
@@ -164,19 +181,23 @@ export const HACKATHONS: Hackathon[] = [
   }
 ];
 
+// BLOCK 1: Top 3 In-Depth S-Tier Systems
 export const FEATURED_PROJECTS: Project[] = [
   {
     id: "smart-retail-ai",
-    title: "SmartRetail_AI",
+    rank: "01",
+    title: "SmartRetail AI",
     headline: "Autonomous Spatial AI & Retail Risk Engine",
-    category: "Computer Vision",
+    category: "Spatial AI & CV",
+    tier: "🏆 S-Tier (Spatial AI & CV)",
+    status: "100% Production-Grade",
     description: "Modular computer vision and spatial intelligence platform implementing person re-identification (ReID), real-time customer journey trajectory tracking, and automated hazard/loss detection.",
     impactMetrics: [
       "Sub-millisecond state caching with Redis AsyncIO",
       "Real-time Person Re-Identification across camera handoffs",
       "Interactive POS Sweethearting & Missed-Scan Simulator"
     ],
-    techStack: ["Python", "FastAPI", "Redis", "Docker", "Pytest", "OpenCV", "Pydantic v2", "SQLAlchemy"],
+    techStack: ["Python", "FastAPI", "Redis AsyncIO", "Docker", "Pytest", "OpenCV", "Pydantic v2"],
     githubUrl: "https://github.com/kramasrisurya/SmartRetail_AI",
     liveUrl: "https://smartretail-frontend.vercel.app",
     highlights: [
@@ -192,93 +213,20 @@ export const FEATURED_PROJECTS: Project[] = [
     ]
   },
   {
-    id: "educraft-ai",
-    title: "Educraft.ai",
-    headline: "Multimodal GenAI PDF-to-Course Conversion Engine",
-    category: "GenAI",
-    description: "End-to-end intelligent educational pipeline leveraging Google Gemini multimodal models to extract, decompose, and convert complex textbook PDFs into interactive course modules, quizzes, and summaries.",
-    impactMetrics: [
-      "Strict JSON schema validation eliminating hallucinated schemas",
-      "Zero-latency sample PDF load with 30-day learning habit heatmap",
-      "100% resilient offline-fallback synthesis & interactive quiz grading"
-    ],
-    techStack: ["TypeScript", "Google Gemini API", "React 19", "Supabase", "Tailwind CSS v4", "Vite", "Node.js"],
-    githubUrl: "https://github.com/kramasrisurya/Educraft.ai",
-    liveUrl: "https://educraft-ai-beryl.vercel.app",
-    highlights: [
-      "Leveraged @google/genai SDK with structured output constraints to guarantee deterministic lesson hierarchy.",
-      "Modern full-stack interface built on React 19 with optimistic state transitions and fluid module navigation.",
-      "Secure user course storage, session management, and PDF caching powered by Supabase SSR auth."
-    ],
-    architectureFlow: [
-      { step: "01", label: "Document Parse", detail: "Multi-page PDF segmentation extracting text, diagrams, and hierarchy" },
-      { step: "02", label: "Gemini Engine", detail: "Multimodal prompt chains enforcing strict Pydantic/Zod structured schemas" },
-      { step: "03", label: "Course Synthesis", detail: "Dynamic generation of interactive flashcards, quizzes, and key takeaways" },
-      { step: "04", label: "Delivery UI", detail: "React 19 interactive classroom interface with progress tracking" }
-    ]
-  },
-  {
-    id: "cosmos",
-    title: "COSMOS NASA Space Explorer",
-    headline: "Interactive Deep Space Astronomy & Planetary Telemetry Portal",
-    category: "GenAI",
-    description: "Interactive space exploration hub pulling high-resolution imagery and planetary science data directly from NASA's Open APIs with Web Speech API audio tours, asteroid tracking, and Mars rover telemetry.",
-    impactMetrics: [
-      "Real-time NASA Open APIs telemetry & HD deep-space streaming",
-      "Zero-latency Web Speech API audio narration tour guides",
-      "100% production serverless build with interactive Mars rover panoramas"
-    ],
-    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "NASA Open APIs", "Web Speech API"],
-    githubUrl: "https://github.com/kramasrisurya/cosmos",
-    liveUrl: "https://cosmos-app-two.vercel.app",
-    highlights: [
-      "Integrated NASA APOD, Mars Rover Photos, and Near-Earth Object (NEO) telemetry APIs.",
-      "Custom audio tour narrator synthesizing astronomical descriptions with Web Speech API.",
-      "Direct high-resolution imagery download pipeline with celestial orbital coordinates."
-    ],
-    architectureFlow: [
-      { step: "01", label: "NASA Ingestion", detail: "Streams APOD, Curiosity rover imagery, and Near-Earth asteroid orbits" },
-      { step: "02", label: "Audio Synthesizer", detail: "Web Speech API parses scientific context into educational audio narration" },
-      { step: "03", label: "Orbital HUD", detail: "Interactive reactive canvas rendering planetary timelines and celestial metrics" }
-    ]
-  },
-  {
-    id: "agentic-ai-omnibots",
-    title: "Agentic AI Omni-Bots Factory",
-    headline: "Autonomous Multi-Agent Industrial Robotics & Defect Triage",
-    category: "Agentic AI",
-    description: "Multi-agent autonomous manufacturing orchestration system where coordinated AI agents supervise assembly lines, diagnose industrial anomalies, and trigger automated procurement pipelines.",
-    impactMetrics: [
-      "Autonomous defect injection & multi-agent consensus triage",
-      "Web Audio API real-time industrial acoustic warning synthesis",
-      "Sub-second state coordination across Quality, Triage, and Dispatch bots"
-    ],
-    techStack: ["TypeScript", "React", "Tailwind CSS", "Web Audio API", "Multi-Agent Systems"],
-    githubUrl: "https://github.com/kramasrisurya/agentic-ai-omnibots",
-    liveUrl: "https://agentic-ai-omnibots.vercel.app",
-    highlights: [
-      "Autonomous agent loop: Sensor monitors, anomaly detector, procurement agent, and plant dispatcher.",
-      "Interactive Anomaly Injector demonstrating live defect resolution in real time.",
-      "Pure browser audio synthesis for tactical alerting without external audio assets."
-    ],
-    architectureFlow: [
-      { step: "01", label: "Sensor Stream", detail: "Assembly line telemetry monitored by continuous surveillance agents" },
-      { step: "02", label: "Anomaly Triage", detail: "Computer vision and vibration sensors flag micro-fracture anomalies" },
-      { step: "03", label: "Agent Consensus", detail: "Quality Control and Logistics agents vote on quarantine and auto-reorder" }
-    ]
-  },
-  {
     id: "s2-legal-ai",
-    title: "S2 Deliberative Legal Agent",
+    rank: "02",
+    title: "S2 Legal AI (OmniBots)",
     headline: "Autonomous Multi-Agent Reasoning & Constraint Verification",
-    category: "Agentic AI",
+    category: "Multi-Agent System",
+    tier: "🏆 S-Tier (Multi-Agent System)",
+    status: "100% Production-Grade",
     description: "Award-winning multi-agent deliberative reasoning system designed for complex document analysis, legal deadline triage, and structured decision validation. 1st Place winner at Epochon 2.0.",
     impactMetrics: [
       "1st Place in Epochon 2.0 Hackathon for innovative agentic design",
       "Deliberative multi-step reasoning validation loop",
-      "One-click Official Legal Memorandum export (PDF/Print)"
+      "Zero-hallucination statutory filing verification & court memo export"
     ],
-    techStack: ["TypeScript", "React", "GenAI", "Multi-Agent Workflows", "Tailwind CSS"],
+    techStack: ["Python", "TypeScript", "Google Gemini API", "Multi-Agent Workflows", "Pydantic v2", "FastAPI"],
     githubUrl: "https://github.com/kramasrisurya/s2-legal-ai",
     liveUrl: "https://s2-legal-ai.vercel.app",
     highlights: [
@@ -294,81 +242,132 @@ export const FEATURED_PROJECTS: Project[] = [
     ]
   },
   {
-    id: "orbit",
-    title: "Orbit System",
-    headline: "Biometric Vision & Mobile Security Zero-Trust Engine",
-    category: "Computer Vision",
-    description: "Real-time AI edge surveillance and automated device lock system leveraging facial landmark meshes, distance telemetry, and anti-intruder proximity protocols.",
+    id: "educraft-ai",
+    rank: "03",
+    title: "EduCraft AI",
+    headline: "Multimodal GenAI PDF-to-Course Conversion Engine",
+    category: "Multimodal GenAI",
+    tier: "🏆 S-Tier (Multimodal GenAI)",
+    status: "100% Production-Grade",
+    description: "End-to-end intelligent educational pipeline leveraging Google Gemini multimodal models to extract, decompose, and convert complex textbook PDFs into interactive course modules, quizzes, and summaries.",
     impactMetrics: [
-      "14.2ms edge inference latency with face mesh models",
-      "Integrated cybernetic diagnostics CLI terminal with live commands",
-      "Proactive auto-lockdown upon perimeter intrusion"
+      "Strict JSON schema validation eliminating hallucinated schemas",
+      "Zero-latency sample PDF load with 30-day learning habit heatmap",
+      "100% resilient offline-fallback synthesis & interactive quiz grading"
     ],
-    techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "JavaScript", "HTML5"],
-    githubUrl: "https://github.com/kramasrisurya/orbit",
-    liveUrl: "https://orbit-system-eight.vercel.app",
+    techStack: ["TypeScript", "Google Gemini API", "React 19", "Supabase SSR", "Tailwind CSS", "Vite"],
+    githubUrl: "https://github.com/kramasrisurya/Educraft.ai",
+    liveUrl: "https://educraft-ai-beryl.vercel.app",
     highlights: [
-      "Interactive security dashboard with live biometric telemetry visualization.",
-      "Embedded diagnostic CLI terminal supporting commands: status, ping, scan, intruder, and clear.",
-      "Zero-latency edge architecture running on lightweight serverless endpoints."
+      "Leveraged @google/genai SDK with structured output constraints to guarantee deterministic lesson hierarchy.",
+      "Modern full-stack interface built on React 19 with optimistic state transitions and fluid module navigation.",
+      "Secure user course storage, session management, and PDF caching powered by Supabase SSR auth."
     ],
     architectureFlow: [
-      { step: "01", label: "Perimeter Scan", detail: "Continuous 468-point 3D facial mesh capture" },
-      { step: "02", label: "Biometric Auth", detail: "Euclidean vector verification against authorized user profile" },
-      { step: "03", label: "Zero-Trust Lock", detail: "Instantaneous device lockdown upon unrecognized intruder entry" }
-    ]
-  },
-  {
-    id: "driveoptimizerr",
-    title: "Drive Storage Optimizer",
-    headline: "Intelligent Cloud Disk Analytics & De-duplication Engine",
-    category: "GenAI",
-    description: "Cloud storage intelligence engine analyzing Google Drive quotas, detecting duplicate media, and identifying junk cache files to recover storage space.",
-    impactMetrics: [
-      "Preloaded Demo Drive mode for instant recruiter evaluation",
-      "Dual serverless & local runtime resilience",
-      "Real-time quota breakdown across file formats"
-    ],
-    techStack: ["TypeScript", "React", "Node.js", "Express", "Vercel Serverless", "Tailwind CSS"],
-    githubUrl: "https://github.com/kramasrisurya/driveoptimizerr",
-    liveUrl: "https://driveoptimizerr.vercel.app",
-    highlights: [
-      "Visual pie charts displaying allocation across videos, raw photos, and archives.",
-      "Instant Preloaded Demo Drive bypass eliminating third-party OAuth configuration hurdles.",
-      "Clean serverless Express handler bundled with esbuild for production reliability."
-    ],
-    architectureFlow: [
-      { step: "01", label: "Drive Ingestion", detail: "Queries storage quota and file hierarchies via OAuth / Demo mode" },
-      { step: "02", label: "Heuristic Audit", detail: "Sorts largest disk consumers and duplicate media hashes" },
-      { step: "03", label: "Cleanup Dispatch", detail: "One-click trash quarantine and storage reclamation" }
-    ]
-  },
-  {
-    id: "expense-teacker",
-    title: "Expense Tracker & Analytics",
-    headline: "Serverless Financial Ledger & Budget Threshold Monitor",
-    category: "GenAI",
-    description: "Modern personal finance application featuring automated CSV statement export, category budget threshold tracking, and serverless persistence.",
-    impactMetrics: [
-      "Monthly category budget threshold gauges with visual warnings",
-      "Instant one-click CSV financial statement download",
-      "100% serverless REST API endpoints running on Vercel"
-    ],
-    techStack: ["React", "TypeScript", "Vercel Serverless Functions", "Tailwind CSS"],
-    githubUrl: "https://github.com/kramasrisurya/expense-teacker",
-    liveUrl: "https://expense-teacker.vercel.app",
-    highlights: [
-      "Real-time expense categorization across Food, Housing, Transport, and Bills.",
-      "Budget Threshold Monitor with real-time percentage consumption bars.",
-      "Automated CSV Statement generation for financial reconciliation."
-    ],
-    architectureFlow: [
-      { step: "01", label: "Transaction Entry", detail: "Categorized expense logging with date and vendor tracking" },
-      { step: "02", label: "Budget Reconcile", detail: "Dynamic comparison against defined category spending thresholds" },
-      { step: "03", label: "Statement Export", detail: "Automated CSV parsing and client-side statement downloads" }
+      { step: "01", label: "Document Parse", detail: "Multi-page PDF segmentation extracting text, diagrams, and hierarchy" },
+      { step: "02", label: "Gemini Engine", detail: "Multimodal prompt chains enforcing strict Pydantic/Zod structured schemas" },
+      { step: "03", label: "Course Synthesis", detail: "Dynamic generation of interactive flashcards, quizzes, and key takeaways" },
+      { step: "04", label: "Delivery UI", detail: "React 19 interactive classroom interface with progress tracking" }
     ]
   }
 ];
+
+// BLOCK 2: Additional Ranked Production Systems (Brief Summary Format)
+export const ADDITIONAL_PROJECTS: AdditionalProject[] = [
+  {
+    id: "cosmos",
+    rank: "04",
+    title: "COSMOS Space Explorer",
+    headline: "NASA Telemetry & Audio Planetary Portal",
+    category: "NASA Telemetry & Audio",
+    tier: "🚀 A-Tier (NASA Telemetry & Audio)",
+    status: "100% Production-Grade",
+    description: "Real-time space exploration portal streaming deep space photography, Curiosity rover telemetry, and Near-Earth asteroid orbits with Web Speech API audio tours.",
+    techStack: ["React", "TypeScript", "NASA Open APIs", "Web Speech API", "Tailwind CSS"],
+    githubUrl: "https://github.com/kramasrisurya/cosmos",
+    liveUrl: "https://cosmos-app-two.vercel.app"
+  },
+  {
+    id: "orbit",
+    rank: "05",
+    title: "Orbit System",
+    headline: "Biometric Edge Vision & Zero-Trust Security",
+    category: "Biometric Edge Vision",
+    tier: "🚀 A-Tier (Biometric Edge Vision)",
+    status: "100% Production-Grade",
+    description: "Real-time edge surveillance and automatic lock system utilizing 468-point 3D facial landmark meshes, distance telemetry, and cybernetic diagnostics CLI.",
+    techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "JavaScript"],
+    githubUrl: "https://github.com/kramasrisurya/orbit",
+    liveUrl: "https://orbit-system-eight.vercel.app"
+  },
+  {
+    id: "agentic-ai-omnibots",
+    rank: "06",
+    title: "Agentic AI Omni-Bots",
+    headline: "Industrial Robotics & Anomaly Triage Factory",
+    category: "Industrial Robotics",
+    tier: "🚀 A-Tier (Industrial Robotics)",
+    status: "100% Production-Grade",
+    description: "Multi-agent autonomous manufacturing orchestration system where coordinated AI agents supervise assembly lines, synthesize industrial acoustic warnings, and automate defect quarantine.",
+    techStack: ["TypeScript", "React", "Multi-Agent Systems", "Web Audio API", "Tailwind CSS"],
+    githubUrl: "https://github.com/kramasrisurya/agentic-ai-omnibots",
+    liveUrl: "https://agentic-ai-omnibots.vercel.app"
+  },
+  {
+    id: "driveoptimizerr",
+    rank: "07",
+    title: "Drive Storage Optimizer",
+    headline: "Cloud Storage Utility & De-duplication Engine",
+    category: "Cloud Storage Utility",
+    tier: "🛠️ B-Tier (Cloud Storage Utility)",
+    status: "100% Production-Grade",
+    description: "Cloud storage intelligence engine analyzing Google Drive quotas, detecting duplicate media, and identifying junk cache files with interactive preloaded demo mode.",
+    techStack: ["TypeScript", "React", "Node.js", "Express", "Vercel Serverless"],
+    githubUrl: "https://github.com/kramasrisurya/driveoptimizerr",
+    liveUrl: "https://driveoptimizerr.vercel.app"
+  },
+  {
+    id: "expense-teacker",
+    rank: "08",
+    title: "Expense Tracker",
+    headline: "Financial CRUD & Budget Threshold Monitor",
+    category: "Financial CRUD",
+    tier: "🛠️ B-Tier (Financial CRUD)",
+    status: "100% Production-Grade",
+    description: "Modern personal finance application featuring automated CSV statement export, category budget threshold tracking, and serverless persistence.",
+    techStack: ["React", "TypeScript", "Vercel Serverless Functions", "Tailwind CSS"],
+    githubUrl: "https://github.com/kramasrisurya/expense-teacker",
+    liveUrl: "https://expense-teacker.vercel.app"
+  },
+  {
+    id: "portfolio",
+    rank: "09",
+    title: "Personal Portfolio",
+    headline: "Developer Hub & WebGL Telemetry",
+    category: "Developer Hub",
+    tier: "🛠️ B-Tier (Developer Hub)",
+    status: "100% Production-Grade",
+    description: "Award-winning editorial portfolio engineered with React 19, Three.js GLSL shaders, Lenis smooth scrolling, and dark luxury aesthetic.",
+    techStack: ["React 19", "Three.js", "GLSL Shaders", "GSAP", "Lenis", "Tailwind CSS"],
+    githubUrl: "https://github.com/kramasrisurya/portfolio",
+    liveUrl: "https://rama-sri-surya-portfolio.vercel.app"
+  },
+  {
+    id: "gpttest-studio",
+    rank: "10",
+    title: "GPTTest Studio",
+    headline: "Basic Scratchpad & Prompt Engineering Playground",
+    category: "Basic Scratchpad",
+    tier: "⚠️ C-Tier (Basic Scratchpad)",
+    status: "Prototype / Minimal",
+    description: "Interactive playground and scratchpad for benchmarking model prompts, testing token boundaries, and comparing response latencies.",
+    techStack: ["JavaScript", "HTML5", "CSS3", "OpenAI API"],
+    githubUrl: "https://github.com/kramasrisurya",
+    liveUrl: "https://gpttest-swart.vercel.app"
+  }
+];
+
+export const ALL_PROJECTS = [...FEATURED_PROJECTS, ...ADDITIONAL_PROJECTS];
 
 export const SKILL_CATEGORIES = [
   {

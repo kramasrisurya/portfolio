@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, Download, ExternalLink, Printer, FileText, CheckCircle2 } from 'lucide-react';
-import { PROFILE, HACKATHONS, FEATURED_PROJECTS, CERTIFICATIONS } from '../data/portfolioData';
+import { PROFILE, HACKATHONS, FEATURED_PROJECTS, ADDITIONAL_PROJECTS, CERTIFICATIONS } from '../data/portfolioData';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -126,7 +126,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
             {/* Print button */}
             <button
-              onClick={() => window.open('/resume.html', '_blank')?.print()}
+              onClick={() => window.open('./resume.html', '_blank')?.print()}
               style={{
                 padding: '8px',
                 borderRadius: '10px',
@@ -203,23 +203,63 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </ul>
           </div>
 
-          {/* Featured Projects */}
+          {/* BLOCK 1: Top 3 In-Depth Featured Projects */}
           <div style={{ marginBottom: '24px' }}>
-            <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '12px' }}>
-              Featured Projects
-            </h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '12px' }}>
+              <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold' }}>
+                Featured Systems &amp; Architecture (In-Depth)
+              </h2>
+              <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>Top 3 Flagship S-Tier</span>
+            </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {FEATURED_PROJECTS.map((proj) => (
-                <div key={proj.id}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '4px', marginBottom: '4px' }}>
-                    <span style={{ fontWeight: 'bold', color: '#fff' }}>{proj.title} — {proj.headline}</span>
-                    <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#ff8c59' }}>{proj.techStack.slice(0, 4).join(', ')}</span>
+                <div key={proj.id} style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '14px 16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '6px', marginBottom: '6px' }}>
+                    <div>
+                      <span style={{ fontFamily: 'var(--font-mono)', color: '#ff8c59', fontWeight: 700, marginRight: '6px' }}>{proj.rank}</span>
+                      <span style={{ fontWeight: 'bold', color: '#fff' }}>{proj.title}</span>
+                      <span style={{ color: '#bbb', fontSize: '12px' }}> — {proj.headline}</span>
+                      <span style={{ marginLeft: '10px', display: 'inline-flex', gap: '8px' }}>
+                        <a href={proj.githubUrl} target="_blank" rel="noreferrer" style={{ color: '#ff8c59', textDecoration: 'none', fontSize: '11px', fontWeight: 600 }}>[GitHub]</a>
+                        <a href={proj.liveUrl} target="_blank" rel="noreferrer" style={{ color: '#38bdf8', textDecoration: 'none', fontSize: '11px', fontWeight: 600 }}>[Live Vercel]</a>
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#ff8c59' }}>{proj.techStack.slice(0, 5).join(', ')}</span>
                   </div>
-                  <ul style={{ paddingLeft: '16px', margin: 0, fontSize: '12px', color: '#ccc', lineHeight: '1.5' }}>
+                  <ul style={{ paddingLeft: '16px', margin: 0, fontSize: '12px', color: '#ccc', lineHeight: '1.55' }}>
                     {proj.highlights.map((h, i) => (
                       <li key={i}>{h}</li>
                     ))}
                   </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* BLOCK 2: Additional Production Systems & Directory (Brief) */}
+          <div style={{ marginBottom: '24px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', borderBottom: '1px solid var(--line)', paddingBottom: '4px', marginBottom: '10px' }}>
+              <h2 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '1px', color: '#ff8c59', fontWeight: 'bold' }}>
+                Additional Production Deployments (Brief Summary)
+              </h2>
+              <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>Ranks 04–10 Directory</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {ADDITIONAL_PROJECTS.map((proj) => (
+                <div key={proj.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '6px', fontSize: '12px', borderBottom: '1px dashed rgba(255,255,255,0.06)', paddingBottom: '6px' }}>
+                  <div>
+                    <span style={{ fontFamily: 'var(--font-mono)', color: '#ff8c59', fontWeight: 700, marginRight: '6px' }}>{proj.rank}</span>
+                    <strong style={{ color: '#fff' }}>{proj.title}</strong>
+                    <span style={{ color: '#888', margin: '0 6px' }}>|</span>
+                    <span style={{ color: '#bbb' }}>{proj.headline}</span>
+                    <span style={{ marginLeft: '8px', display: 'inline-flex', gap: '6px' }}>
+                      <a href={proj.githubUrl} target="_blank" rel="noreferrer" style={{ color: '#ff8c59', textDecoration: 'none', fontSize: '11px' }}>[GitHub]</a>
+                      <a href={proj.liveUrl} target="_blank" rel="noreferrer" style={{ color: '#38bdf8', textDecoration: 'none', fontSize: '11px' }}>[Live Vercel]</a>
+                    </span>
+                  </div>
+                  <span style={{ fontSize: '10px', fontFamily: 'var(--font-mono)', color: '#888' }}>
+                    {proj.techStack.slice(0, 3).join(', ')}
+                  </span>
                 </div>
               ))}
             </div>

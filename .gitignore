@@ -35,3 +35,4 @@ resume.html
 !public/
 !public/**
 !src/**
+.vercel
