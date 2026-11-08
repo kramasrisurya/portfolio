@@ -174,10 +174,11 @@ export const FEATURED_PROJECTS: Project[] = [
     impactMetrics: [
       "Sub-millisecond state caching with Redis AsyncIO",
       "Real-time Person Re-Identification across camera handoffs",
-      "100% test coverage with Pytest & Ruff linting standards"
+      "Interactive POS Sweethearting & Missed-Scan Simulator"
     ],
     techStack: ["Python", "FastAPI", "Redis", "Docker", "Pytest", "OpenCV", "Pydantic v2", "SQLAlchemy"],
     githubUrl: "https://github.com/kramasrisurya/SmartRetail_AI",
+    liveUrl: "https://smartretail-frontend.vercel.app",
     highlights: [
       "Deep feature extraction pipeline for multi-frame human re-identification across non-overlapping camera fields.",
       "Asynchronous REST endpoints powered by FastAPI and Pydantic v2 with non-blocking event-loop processing.",
@@ -198,11 +199,12 @@ export const FEATURED_PROJECTS: Project[] = [
     description: "End-to-end intelligent educational pipeline leveraging Google Gemini multimodal models to extract, decompose, and convert complex textbook PDFs into interactive course modules, quizzes, and summaries.",
     impactMetrics: [
       "Strict JSON schema validation eliminating hallucinated schemas",
-      "Multi-modal chunk parsing handling dense math formulas & figures",
-      "Full-stack React 19 + Supabase SSR architecture"
+      "Zero-latency sample PDF load with 30-day learning habit heatmap",
+      "100% resilient offline-fallback synthesis & interactive quiz grading"
     ],
     techStack: ["TypeScript", "Google Gemini API", "React 19", "Supabase", "Tailwind CSS v4", "Vite", "Node.js"],
     githubUrl: "https://github.com/kramasrisurya/Educraft.ai",
+    liveUrl: "https://educraft-ai-beryl.vercel.app",
     highlights: [
       "Leveraged @google/genai SDK with structured output constraints to guarantee deterministic lesson hierarchy.",
       "Modern full-stack interface built on React 19 with optimistic state transitions and fluid module navigation.",
@@ -216,18 +218,69 @@ export const FEATURED_PROJECTS: Project[] = [
     ]
   },
   {
+    id: "cosmos",
+    title: "COSMOS NASA Space Explorer",
+    headline: "Interactive Deep Space Astronomy & Planetary Telemetry Portal",
+    category: "GenAI",
+    description: "Interactive space exploration hub pulling high-resolution imagery and planetary science data directly from NASA's Open APIs with Web Speech API audio tours, asteroid tracking, and Mars rover telemetry.",
+    impactMetrics: [
+      "Real-time NASA Open APIs telemetry & HD deep-space streaming",
+      "Zero-latency Web Speech API audio narration tour guides",
+      "100% production serverless build with interactive Mars rover panoramas"
+    ],
+    techStack: ["React", "TypeScript", "Vite", "Tailwind CSS", "NASA Open APIs", "Web Speech API"],
+    githubUrl: "https://github.com/kramasrisurya/cosmos",
+    liveUrl: "https://cosmos-app-two.vercel.app",
+    highlights: [
+      "Integrated NASA APOD, Mars Rover Photos, and Near-Earth Object (NEO) telemetry APIs.",
+      "Custom audio tour narrator synthesizing astronomical descriptions with Web Speech API.",
+      "Direct high-resolution imagery download pipeline with celestial orbital coordinates."
+    ],
+    architectureFlow: [
+      { step: "01", label: "NASA Ingestion", detail: "Streams APOD, Curiosity rover imagery, and Near-Earth asteroid orbits" },
+      { step: "02", label: "Audio Synthesizer", detail: "Web Speech API parses scientific context into educational audio narration" },
+      { step: "03", label: "Orbital HUD", detail: "Interactive reactive canvas rendering planetary timelines and celestial metrics" }
+    ]
+  },
+  {
+    id: "agentic-ai-omnibots",
+    title: "Agentic AI Omni-Bots Factory",
+    headline: "Autonomous Multi-Agent Industrial Robotics & Defect Triage",
+    category: "Agentic AI",
+    description: "Multi-agent autonomous manufacturing orchestration system where coordinated AI agents supervise assembly lines, diagnose industrial anomalies, and trigger automated procurement pipelines.",
+    impactMetrics: [
+      "Autonomous defect injection & multi-agent consensus triage",
+      "Web Audio API real-time industrial acoustic warning synthesis",
+      "Sub-second state coordination across Quality, Triage, and Dispatch bots"
+    ],
+    techStack: ["TypeScript", "React", "Tailwind CSS", "Web Audio API", "Multi-Agent Systems"],
+    githubUrl: "https://github.com/kramasrisurya/agentic-ai-omnibots",
+    liveUrl: "https://agentic-ai-omnibots.vercel.app",
+    highlights: [
+      "Autonomous agent loop: Sensor monitors, anomaly detector, procurement agent, and plant dispatcher.",
+      "Interactive Anomaly Injector demonstrating live defect resolution in real time.",
+      "Pure browser audio synthesis for tactical alerting without external audio assets."
+    ],
+    architectureFlow: [
+      { step: "01", label: "Sensor Stream", detail: "Assembly line telemetry monitored by continuous surveillance agents" },
+      { step: "02", label: "Anomaly Triage", detail: "Computer vision and vibration sensors flag micro-fracture anomalies" },
+      { step: "03", label: "Agent Consensus", detail: "Quality Control and Logistics agents vote on quarantine and auto-reorder" }
+    ]
+  },
+  {
     id: "s2-legal-ai",
-    title: "S2 Deliberative Legal Agent (OmniBots)",
+    title: "S2 Deliberative Legal Agent",
     headline: "Autonomous Multi-Agent Reasoning & Constraint Verification",
     category: "Agentic AI",
     description: "Award-winning multi-agent deliberative reasoning system designed for complex document analysis, legal deadline triage, and structured decision validation. 1st Place winner at Epochon 2.0.",
     impactMetrics: [
       "1st Place in Epochon 2.0 Hackathon for innovative agentic design",
       "Deliberative multi-step reasoning validation loop",
-      "Deterministic constraint checking preventing invalid recommendations"
+      "One-click Official Legal Memorandum export (PDF/Print)"
     ],
-    techStack: ["Python", "GenAI", "Agentic Systems", "Multi-Agent Workflows", "Prompt Engineering"],
+    techStack: ["TypeScript", "React", "GenAI", "Multi-Agent Workflows", "Tailwind CSS"],
     githubUrl: "https://github.com/kramasrisurya/s2-legal-ai",
+    liveUrl: "https://s2-legal-ai.vercel.app",
     highlights: [
       "Orchestrated autonomous multi-agent graph with specialized roles: Document Ingestion, Statute Analysis, and Constraint Verification.",
       "Implemented a deliberative reflection protocol where agent outputs are rigorously self-audited before presenting conclusions.",
@@ -237,32 +290,82 @@ export const FEATURED_PROJECTS: Project[] = [
       { step: "01", label: "Intake Router", detail: "Decomposes complex legal filings into structured sub-agent tasks" },
       { step: "02", label: "Specialist Agents", detail: "Concurrent execution of statute extraction and timeline reconstruction" },
       { step: "03", label: "Consensus Loop", detail: "Cross-agent verification against legal rule constraints and deadlines" },
-      { step: "04", label: "Audited Output", detail: "Synthesized report with verifiable source grounding and confidence scores" }
+      { step: "04", label: "Audited Output", detail: "Synthesized report with verifiable source grounding and printable court memo" }
     ]
   },
   {
-    id: "mnist-cnn",
-    title: "MNIST Deep CNN & Inference Canvas",
-    headline: "Convolutional Neural Network with Real-Time Interactive Canvas",
-    category: "Deep Learning",
-    description: "High-accuracy handwritten digit recognition system combining a deep convolutional neural network with an interactive web drawing canvas for real-time stroke inference and class probability visualization.",
+    id: "orbit",
+    title: "Orbit System",
+    headline: "Biometric Vision & Mobile Security Zero-Trust Engine",
+    category: "Computer Vision",
+    description: "Real-time AI edge surveillance and automated device lock system leveraging facial landmark meshes, distance telemetry, and anti-intruder proximity protocols.",
     impactMetrics: [
-      ">98% classification accuracy on MNIST test benchmark",
-      "Instantaneous browser stroke inference",
-      "Live softmax class probability distribution graphs"
+      "14.2ms edge inference latency with face mesh models",
+      "Integrated cybernetic diagnostics CLI terminal with live commands",
+      "Proactive auto-lockdown upon perimeter intrusion"
     ],
-    techStack: ["Python", "PyTorch", "Keras 3", "Streamlit", "NumPy", "Matplotlib"],
-    githubUrl: "https://github.com/kramasrisurya/mnist_digit_recognition",
+    techStack: ["Python", "FastAPI", "OpenCV", "MediaPipe", "JavaScript", "HTML5"],
+    githubUrl: "https://github.com/kramasrisurya/orbit",
+    liveUrl: "https://orbit-system-eight.vercel.app",
     highlights: [
-      "Trained custom deep CNN architecture with Batch Normalization, Dropout, and Adam optimizer.",
-      "Built responsive drawing interface using Streamlit Drawable Canvas with normalization preprocessing.",
-      "Visualized layer feature representations and probability distributions in real time."
+      "Interactive security dashboard with live biometric telemetry visualization.",
+      "Embedded diagnostic CLI terminal supporting commands: status, ping, scan, intruder, and clear.",
+      "Zero-latency edge architecture running on lightweight serverless endpoints."
     ],
     architectureFlow: [
-      { step: "01", label: "Canvas Input", detail: "Vector drawing capture normalized to 28x28 grayscale tensor" },
-      { step: "02", label: "Preprocess", detail: "Center of mass alignment and MinMax value normalization" },
-      { step: "03", label: "CNN Feedforward", detail: "Conv2D + MaxPool + Dropout feature activation layers" },
-      { step: "04", label: "Live Softmax", detail: "Instantaneous top-3 probability rendering with confidence gauge" }
+      { step: "01", label: "Perimeter Scan", detail: "Continuous 468-point 3D facial mesh capture" },
+      { step: "02", label: "Biometric Auth", detail: "Euclidean vector verification against authorized user profile" },
+      { step: "03", label: "Zero-Trust Lock", detail: "Instantaneous device lockdown upon unrecognized intruder entry" }
+    ]
+  },
+  {
+    id: "driveoptimizerr",
+    title: "Drive Storage Optimizer",
+    headline: "Intelligent Cloud Disk Analytics & De-duplication Engine",
+    category: "GenAI",
+    description: "Cloud storage intelligence engine analyzing Google Drive quotas, detecting duplicate media, and identifying junk cache files to recover storage space.",
+    impactMetrics: [
+      "Preloaded Demo Drive mode for instant recruiter evaluation",
+      "Dual serverless & local runtime resilience",
+      "Real-time quota breakdown across file formats"
+    ],
+    techStack: ["TypeScript", "React", "Node.js", "Express", "Vercel Serverless", "Tailwind CSS"],
+    githubUrl: "https://github.com/kramasrisurya/driveoptimizerr",
+    liveUrl: "https://driveoptimizerr.vercel.app",
+    highlights: [
+      "Visual pie charts displaying allocation across videos, raw photos, and archives.",
+      "Instant Preloaded Demo Drive bypass eliminating third-party OAuth configuration hurdles.",
+      "Clean serverless Express handler bundled with esbuild for production reliability."
+    ],
+    architectureFlow: [
+      { step: "01", label: "Drive Ingestion", detail: "Queries storage quota and file hierarchies via OAuth / Demo mode" },
+      { step: "02", label: "Heuristic Audit", detail: "Sorts largest disk consumers and duplicate media hashes" },
+      { step: "03", label: "Cleanup Dispatch", detail: "One-click trash quarantine and storage reclamation" }
+    ]
+  },
+  {
+    id: "expense-teacker",
+    title: "Expense Tracker & Analytics",
+    headline: "Serverless Financial Ledger & Budget Threshold Monitor",
+    category: "GenAI",
+    description: "Modern personal finance application featuring automated CSV statement export, category budget threshold tracking, and serverless persistence.",
+    impactMetrics: [
+      "Monthly category budget threshold gauges with visual warnings",
+      "Instant one-click CSV financial statement download",
+      "100% serverless REST API endpoints running on Vercel"
+    ],
+    techStack: ["React", "TypeScript", "Vercel Serverless Functions", "Tailwind CSS"],
+    githubUrl: "https://github.com/kramasrisurya/expense-teacker",
+    liveUrl: "https://expense-teacker.vercel.app",
+    highlights: [
+      "Real-time expense categorization across Food, Housing, Transport, and Bills.",
+      "Budget Threshold Monitor with real-time percentage consumption bars.",
+      "Automated CSV Statement generation for financial reconciliation."
+    ],
+    architectureFlow: [
+      { step: "01", label: "Transaction Entry", detail: "Categorized expense logging with date and vendor tracking" },
+      { step: "02", label: "Budget Reconcile", detail: "Dynamic comparison against defined category spending thresholds" },
+      { step: "03", label: "Statement Export", detail: "Automated CSV parsing and client-side statement downloads" }
     ]
   }
 ];
