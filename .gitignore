@@ -36,3 +36,8 @@ resume.html
 !public/**
 !src/**
 .vercel
+
+*.csv
+*_log.json
+top_*.json
+india_10k_*
